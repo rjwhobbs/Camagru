@@ -1,0 +1,50 @@
+body
+{
+	background-color: lightgray;
+}
+
+#canvas
+{
+	display: none;
+}
+
+.indexfeed
+{
+	border: 1px solid lightcyan;
+}
+
+textarea
+{
+	border: none;
+}
+
+.thumbnails img
+{
+	width: 200px;
+	height: 150px;
+}
+
+.image-checkbox img
+{
+	width: 66px;
+	height: 60px;
+}
+
+@media (max-width:530px)
+{
+	video
+ 	{
+		width: 80%;
+		height: 80%;
+	}
+	img
+	{
+		width: 80%;
+		height: 80%;
+	}	
+	.image-checkbox img
+	{
+		width: 10%;
+		height: 10%;
+	}
+}
