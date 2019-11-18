@@ -8,10 +8,14 @@ if (!empty($_POST['path']))
 	$file = trim($file);
 	if ($file != "images/error.png")
 	{
+		if (strpos($file, "unedited") !== FALSE)
+			$edited = 0;
+		else
+			$edited = 1;
 		$user_id = $_SESSION['user_id'];
-		$sql = 'INSERT INTO `images` (`path`, `user_id`) VALUES (?, ?)'; // remove edited from table creation!!!!!!!!
+		$sql = 'INSERT INTO `images` (`path`, `user_id`, `edited`) VALUES (?, ?, ?)'; // remove edited from table creation!!!!!!!!
 		$stmt = $conn->prepare($sql);
-		$stmt->execute([$file, $user_id]);
+		$stmt->execute([$file, $user_id, $edited]);
 		unset($stmt);
 	
 		echo "Image has been saved, please click \"Try again\" to load your photo history.";

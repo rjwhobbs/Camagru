@@ -3,7 +3,6 @@ session_start();
 require ('./valid_session_check.php');
 require ('./header.php');
 require ('./query_functions.php');
-//require ('./connection.php');
 ?>
 	<h1>Camera Editor</h1>
 	<h2>Please select a sticker inorder to take a picture.</h2>
@@ -12,10 +11,8 @@ require ('./query_functions.php');
 		<button style="display: none" id="photo-button" class="btn btn-dark">
 			Take Photo
 		</button>
-		<!-- <form action="editor.php" method="post" enctype="multipart/form-data"> -->
 		<label id="imagelable" style="display: none"> or upload a pic</label>
 		<input id="uploadImage" style="display: none" type="file" name="upload-user" accept="image/*"><br> 
-		<!-- </form> -->
 		<button id="save-button" class="btn btn-dark" style="display: none">
 			Save Photo
 		</button>
@@ -32,8 +29,8 @@ require ('./query_functions.php');
 				<label for="sticker3"><img  src="./images/sticker3.png"></label>
 			<input type="checkbox" name="sticker-menu2" id="sticker4" value="sticker4.png">
 				<label for="sticker4"><img src="./images/sticker4.png" ></label>
-		<!-- <input type="checkbox" name="sticker-menu2" id="stickernone" value="nosticker">
-			<label for="stickernone">No Sticker</label> -->
+			<input type="checkbox" name="sticker-menu2" id="stickernone" value="nosticker">
+				<label for="stickernone">No Sticker</label>
 		</div>
 		<canvas id="canvas"></canvas>
 	</div>

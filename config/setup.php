@@ -28,7 +28,7 @@ try
 				`verified` BOOLEAN NOT NULL DEFAULT FALSE, 
 				`verification` VARCHAR(255) DEFAULT NULL,
 				`profile-pic` VARCHAR(255) DEFAULT NULL,
-				`notifications` BOOLEAN NOT NULL DEFAULT TRUE , 
+				`notifications` BOOLEAN NOT NULL DEFAULT TRUE, 
 				PRIMARY KEY (`id`)) ENGINE = InnoDB ";
 	$stmt = $conn->prepare($createdb);
 	$stmt->execute();
@@ -38,7 +38,8 @@ try
 				`path` TEXT NOT NULL,
 				`user_id` INT NOT NULL, 
 				`creation_date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, 
-				`likes` INT DEFAULT NULL,  
+				`likes` INT DEFAULT NULL,
+				`edited` BOOLEAN NOT NULL DEFAULT TRUE,
 				PRIMARY KEY (`id`)) ENGINE = InnoDB";
 	$stmt = $conn->prepare($createtab);
 	$stmt->execute();

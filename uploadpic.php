@@ -16,9 +16,14 @@ if (isset($_POST['img']) && !empty($_POST['sticker']))
 	$data = base64_decode($img);	
 	$upload = imagecreatefromstring($data);
 
-	$sticker_arr = preg_split('/:/', $sticker_choice, NULL, PREG_SPLIT_NO_EMPTY);
-	$clean_arr = array_unique($sticker_arr);
-	$clean_arr = sticker_array_validator($clean_arr);
+	if (strpos($sticker_choice, "nosticker") !== FALSE)
+		$clean_arr = array();
+	else
+	{
+		$sticker_arr = preg_split('/:/', $sticker_choice, NULL, PREG_SPLIT_NO_EMPTY);
+		$clean_arr = array_unique($sticker_arr);
+		$clean_arr = sticker_array_validator($clean_arr);
+	}
 
 	$mwidth = imagesx($upload);
 	$mheight = imagesy($upload);
@@ -58,7 +63,10 @@ if (isset($_POST['img']) && !empty($_POST['sticker']))
 		}
 	}
 
-	$file = "images/".$rand.uniqid().".png";
+	if ($len == 0)
+		$file = "images/unedited".$rand.uniqid().".png";
+	else
+		$file = "images/".$rand.uniqid().".png";
 	$success = imagepng($upload, $file);
 	
 	imagedestroy($upload);

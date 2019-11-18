@@ -22,11 +22,15 @@ if (!empty($_FILES) && !empty($_POST['sticker']))
 
 	copy($_FILES['file']['tmp_name'], $pic_path);
 	$upload = imagecreatefromstring(file_get_contents($pic_path));
-	// $upload = imagecreatefrompng($pic_path); // need to check type of pic
 
-	$sticker_arr = preg_split('/:/', $sticker_choice, NULL, PREG_SPLIT_NO_EMPTY);
-	$clean_arr = array_unique($sticker_arr);
-	$clean_arr = sticker_array_validator($clean_arr);
+	if (strpos($sticker_choice, "nosticker") !== FALSE)
+		$clean_arr = array();	
+	else
+	{
+		$sticker_arr = preg_split('/:/', $sticker_choice, NULL, PREG_SPLIT_NO_EMPTY);
+		$clean_arr = array_unique($sticker_arr);
+		$clean_arr = sticker_array_validator($clean_arr);
+	}
 
 	$mwidth = imagesx($upload);
 	$mheight = imagesy($upload);
@@ -81,6 +85,10 @@ if (!empty($_FILES) && !empty($_POST['sticker']))
 		}
 	}
 
+	if ($len == 0)
+		$pic_path = "images/unedited".$rand.uniqid().".png";
+	else
+		$pic_path = "images/".$rand.uniqid().".png";
 	$success = imagepng($upload, $pic_path);
 	echo trim($pic_path);
 }
