@@ -1,5 +1,5 @@
 <?php
-require('./setup.php');
+require('./database.php');
 try
 {
 	$conn = new PDO('mysql:host='.$DB_HOST, $DB_USER, $DB_PASSWORD);
