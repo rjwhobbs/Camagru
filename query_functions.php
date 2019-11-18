@@ -2,9 +2,9 @@
 function get_images()
 {
 	require ('./connection.php');
-	$query = 'SELECT * FROM `images` ORDER BY `images`.`creation_date` DESC';
+	$query = 'SELECT * FROM `images` WHERE `edited` = ? ORDER BY `images`.`creation_date` DESC ';
 	$stmt = $conn->prepare($query);
-	$stmt->execute();
+	$stmt->execute([1]);
 	$array = $stmt->fetchAll(PDO::FETCH_ASSOC); // error handling?
 	unset($stmt); // is unsetting stmt here necessary, will closing the func unset it?
 	return $array;

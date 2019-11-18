@@ -2,8 +2,6 @@
 session_start();
 require ('./controller.php');
 require ('./header.php');
-//include ('./query_functions.php');
-//include ('./helpers.php');
 ?>
 <h2>Camagru feed</h2>
 <?php
