@@ -1,9 +1,14 @@
 #Options +FollowSymLinks
 #RewriteEngine On
-#RewriteRule ^folder1/(.*$) http://localhost:8080/#Camagru_research/folder2/$1 [R=301,L]
+#RewriteRule ^(.*) http://localhost:8080/Camagru/index.php 
 
-ErrorDocument 400 http://localhost:8080/camagru_research/error.html
-ErrorDocument 401 http://localhost:8080/camagru_research/error.html
-ErrorDocument 403 http://localhost:8080/camagru_research/error.html
-ErrorDocument 404 http://localhost:8080/camagru_research/error.html
-ErrorDocument 500 http://localhost:8080/camagru_research/error.html
+#RewriteEngine on
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ /index.php?path=$1
+
+ErrorDocument 400 http://localhost:8080/Camagru/error.html
+ErrorDocument 401 http://localhost:8080/Camagru/error.html
+ErrorDocument 403 http://localhost:8080/Camagru/error.html
+ErrorDocument 404 http://localhost:8080/Camagru/error.html
+ErrorDocument 500 http://localhost:8080/Camagru/error.html
