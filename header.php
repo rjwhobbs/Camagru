@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,6 +31,16 @@
 		if (isset($_SESSION['user_id']))
 		{?>
 			<br><span>Logged in as: <?php echo $_SESSION['username']?></span>
+			<?php
+				$profile_pic = get_profile_pic($_SESSION['user_id']);
+				if ($profile_pic !== FALSE)
+				{?>
+					<div class="profile-pic-div">
+						<img src=<?php echo $profile_pic ?> alt="">
+					</div>
+				<?php
+				}
+			?>
 		<?php	
 		}
 	?>	

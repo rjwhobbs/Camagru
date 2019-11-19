@@ -174,4 +174,26 @@ function get_owner_notif($user_id)
 	else
 		return 0;
 }
+
+function get_profile_pic($user_id)
+{
+	if ($user_id > 0)
+	{
+		require ('./connection.php');
+		$query = "SELECT * FROM `users` WHERE `id` = ?";
+		$stmt = $conn->prepare($query);
+		$stmt->execute([$user_id]);
+		$res = $stmt->fetch(PDO::FETCH_ASSOC);
+		if($res)
+		{
+			if ($res['profile-pic'] == NULL)
+				return FALSE;
+			return $res['profile-pic'];
+		}
+		else 
+			return FALSE;
+	}
+	else
+		return FALSE;
+}
 ?>
