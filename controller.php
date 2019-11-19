@@ -58,9 +58,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-signup']))
 		$result = $stmt->fetch(PDO::FETCH_ASSOC);
 		if ($result)
 			$errors['email'] = 'Email address already exits';
-		$stmt = NULL; // is this neccessary? unset might be better
+		$stmt = NULL; 
 		$result = NULL;
-		// Should we add unique constraint to DB aswell?
 	}
 		
 	//Password checks
@@ -76,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-signup']))
 	else if ($_POST['passwd'] != $_POST['confirm-passwd'])
 		$errors['passwd'] = "Passwords don't match.";
 
-	//Image checks . Please look at the helper function, image_check may need more protection
+	//Image checks . 
 	if (!empty($_FILES['profile-pic']['name']))
 	{
 		if (image_check($_FILES['profile-pic']['type'], $_FILES['profile-pic']['tmp_name']) === FALSE) 
@@ -145,8 +144,8 @@ else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-signin']))
 		echo $e->getMessage();
 	}
 	if ($info === FALSE)
-		$_SESSION['message'] = "Incorrect username or password, please try again."; //this needs to be in errors[]; 
-	else if ($info['verified'] == 1) // ? Why can't i use === 
+		$_SESSION['message'] = "Incorrect username or password, please try again."; 
+	else if ($info['verified'] == 1) 
 	{
 		if (password_verify($_POST['passwd'], $info['passwd']))
 		{
@@ -172,7 +171,7 @@ else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-signin']))
 *	RESEND LINK / SIGNIN.PHP
 ****************************/
 
-else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['resend-link'])) //Do i need to unset POSTS
+else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['resend-link'])) 
 {
 	$username = $_POST['username'];
 	$email = $_POST['email'];
@@ -195,8 +194,8 @@ else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['resend-link'])) /
 		echo $e->getMessage();
 	}
 	if ($info === FALSE)
-		$_SESSION['message'] = "Please fill in all the feilds correctly and try again."; //this needs to be in errors[]; 
-	else if ($info['verified'] == 1) // ? Why can't i use === 
+		$_SESSION['message'] = "Please fill in all the feilds correctly and try again."; 
+	else if ($info['verified'] == 1)
 	{
 		if ($email != $info['email'])
 		{
@@ -278,14 +277,14 @@ else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['reset-passwd']))
 		$query = 'UPDATE `users` SET `verification` = ? WHERE `id` = ?';
 		$stmt = $conn->prepare($query);
 		$stmt->execute([$verification_code, $res['id']]);
-		mail_verification_code($res['email'], $verification_code, 'PASSWD_VERIFY', $res['username']);// Protect?
+		mail_verification_code($res['email'], $verification_code, 'PASSWD_VERIFY', $res['username']);
 		unset($stmt);
-		unset($verification_code); // Should have a message saying email sent
+		unset($verification_code);
 	}
 	else
 	{
-		$_SESSION['message'] = 'This is an invalid email address, please try again.'; // I'm thinking I should remove this else, people can use this ouput to see if a user is on this site.
-		header('location: forgotpasswd.php'); // Is this necessary here?
+		$_SESSION['message'] = 'This is an invalid email address, please try again.'; 
+		header('location: forgotpasswd.php'); 
 		exit();
 	}
 }
@@ -296,7 +295,6 @@ else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['reset-passwd']))
 
 else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['verification']) && isset($_POST['Reset']))
 {
-	// I want to use an errors array here but it doesn't seem to be printing on the forgotpasswd page. Will try fix this.
 	$bad_passwd = "";
 	$error_check = FALSE;
 	if (empty($_POST['email']) || empty($_POST['passwd']) || empty($_POST['confirm-passwd']))
@@ -309,11 +307,11 @@ else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['verification']
 		$bad_passwd = "Password must only contain atleast one lower and upper case letter,<br>
 		one number, and be longer than 9 characters.";
 	}
-	else if ($_POST['passwd'] !== $_POST['confirm-passwd']) // Still needs strong password checking
+	else if ($_POST['passwd'] !== $_POST['confirm-passwd'])
 		$error_check = TRUE;
-	else if ($error_check === FALSE) // Makes sure email and vcode match
+	else if ($error_check === FALSE) 
 	{
-		$query = 'SELECT * FROM `users` WHERE `verification` = ? && `email` = ? '; // Also check if user is verified
+		$query = 'SELECT * FROM `users` WHERE `verification` = ? && `email` = ? ';
 		$stmt = $conn->prepare($query);
 		$stmt->execute([$_SESSION['verification'], $_POST['email']]);
 		$res = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -347,8 +345,6 @@ else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['verification']
 /************************************************
 *	RESET PASSWORD / NEW_PASSWORD.PHP / RESET.PHP
 *************************************************/
-//This is incase a user trys to access this page without getting an email
-// Can probably take this away once I sort out htaccess
 
 else if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_SESSION['verification']) && isset($_POST['Reset']))
 {
@@ -423,7 +419,7 @@ else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_username']
 			if ($result['username'] == $username)
 				$errors['username'] = 'This is already your username';
 		}
-		$stmt = NULL; // unset or NULL?
+		$stmt = NULL; 
 		$result = NULL;
 	}			
 	
@@ -445,7 +441,6 @@ else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_username']
 
 else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_passwd']))
 {
-	//var_dump($_POST); die;
 	if (empty($_POST['old_passwd']) || empty($_POST['new_passwd']) || empty($_POST['confirm_new_passwd']))
 		$errors['passwd'] = "Feilds can't be empty.";
 	else if (passwd_check($_POST['new_passwd']) === FALSE)
@@ -485,9 +480,9 @@ else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_passwd']))
 else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_comment']) && isset($_POST['comment']) && !empty($_SESSION['image_id']))
 {
 	$comment = filter_input(INPUT_POST, 'comment', FILTER_SANITIZE_STRING);
-	$image_id = filter_var($_SESSION['image_id'], FILTER_SANITIZE_NUMBER_INT); // user has access to this var;
+	$image_id = filter_var($_SESSION['image_id'], FILTER_SANITIZE_NUMBER_INT); 
 	$user_id = $_SESSION['user_id'];
-	$comment = trim($comment); // Will this leak like in c?
+	$comment = trim($comment); 
 	
 	if (empty($comment))
 		$errors['comment'] = "Comments can't be empty.";
