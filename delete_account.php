@@ -2,7 +2,6 @@
 session_start();
 require ('./valid_session_check.php');
 require ('./connection.php');
-//$errors = array(); // maybe declare arrays in each if in controller, of if not set in controller check
 if (!empty($_POST['check-confirm']) && !empty($_POST['confirm-passwd']) && !empty($_POST['delete']))
 {
 	$error_checker = FALSE;
@@ -17,7 +16,7 @@ if (!empty($_POST['check-confirm']) && !empty($_POST['confirm-passwd']) && !empt
 		$res = $stmt->fetch(PDO::FETCH_ASSOC);
 		if ($res)
 		{
-			if (password_verify($passwd, $res['passwd'])) // Need to check if this will work if the tables are empty
+			if (password_verify($passwd, $res['passwd'])) 
 			{
 				$query = "DELETE FROM `users` WHERE `users`.`id` = ?";
 				$stmt = $conn->prepare($query);
@@ -34,10 +33,26 @@ if (!empty($_POST['check-confirm']) && !empty($_POST['confirm-passwd']) && !empt
 				$stmt->execute([$user_id]);
 				unset($stmt);
 
-				$query = "DELETE FROM `likes` WHERE `user_id` = ?"; //likes will stay counted but database will be cleaned up
+				$query = "DELETE FROM `likes` WHERE `user_id` = ?"; 
 				$stmt = $conn->prepare($query);
 				$stmt->execute([$user_id]);
 				unset($stmt);
+
+				$query = "SELECT * FROM `images` WHERE `user_id` = ?";
+				$stmt = $conn->prepare($query);
+				$stmt->execute([$user_id]);
+				$path_arr = $stmt->fetchAll((PDO::FETCH_ASSOC));
+
+				$len = count($path_arr);
+				if ($len === FALSE)
+					$len = 0;
+				
+				$i = 0;
+				while($i < $len)
+				{
+					unlink($path_arr[$i]['path']);
+					$i++;
+				}
 
 				header('location: signout.php');
 				exit();

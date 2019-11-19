@@ -1,7 +1,7 @@
 <?php
 session_start();
 require ('./valid_session_check.php');
-require ('./controller.php'); // will this call the controller again?
+require ('./controller.php');
 require ('./header.php');
 ?>
 <h1>Profile settings for <?= $_SESSION['username']?></h1>
@@ -18,7 +18,6 @@ require ('./header.php');
 		unset($_SESSION['message']);
 	}
 ?><br>
-<!--Buttons will be better here, not time to change all -->
 <form action="profile.php" method="post"> 
 	<span>Your username: <?= $_SESSION['username'].' ' ?></span><br>
 		<input type="text" placeholder="update username" name="new_username">
@@ -42,7 +41,7 @@ require ('./header.php');
 <form id="delete-account" action="delete_account.php" method="post">
 	<span>Delete your account.<br> 
 			Enter the required feilds and click 'Delete account'. <br>
-			WARNING! This acction cannot be undone!</span><br>
+			WARNING! This action cannot be undone!</span><br>
 	<input type="hidden" value=<?= $_SESSION['user_id'] ?> name="delete">
 	<span>I understand</span>
 	<input type="checkbox" value="checked" name="check-confirm"><br>
