@@ -1,4 +1,4 @@
 
-	<h2>This is the footer</h2>
+	<footer>Camagru was built by &copy;rhobbs</footer>
 </body>
 </html>
