@@ -174,4 +174,22 @@ function get_owner_notif($user_id)
 	else
 		return 0;
 }
+
+// function is_image_liked($user_id, $image_id)
+// {
+// 	if ($user_id > 0 && $image_id > 0)
+// 	{
+// 		require ('./connection.php');
+// 		$query = "SELECT * FROM `likes` WHERE `user_id` = ? && `image_id` = ? ";
+// 		$stmt = $conn->prepare($query);
+// 		$stmt->execute([$user_id, $image_id]);
+// 		$res = $stmt->fetch(PDO::FETCH_ASSOC);
+// 		if($res)
+// 			return $res['liked'];
+// 		else 
+// 			return 0;
+// 	}
+// 	else
+// 		return 0;
+// }
 ?>

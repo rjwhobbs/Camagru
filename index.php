@@ -29,7 +29,7 @@ require ('./header.php');
 				<button id=<?php echo $images[$i]['id']?> 
 						value=<?php echo $images[$i]['path']; ?> 
 						onclick="likeFunction(this)">
-						<?php echo get_image_likes($images[$i]['path']); ?> 
+						<?php echo get_image_likes($images[$i]['path']); ?>
 						Like+</button>
 			<?php
 			}
