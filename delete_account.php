@@ -18,6 +18,22 @@ if (!empty($_POST['check-confirm']) && !empty($_POST['confirm-passwd']) && !empt
 		{
 			if (password_verify($passwd, $res['passwd'])) 
 			{
+				$query = "SELECT `path` FROM `images` WHERE `user_id` = ?";
+				$stmt = $conn->prepare($query);
+				$stmt->execute([$user_id]);
+				$path_arr = $stmt->fetchAll((PDO::FETCH_ASSOC));
+
+				$len = count($path_arr);
+				if ($len === FALSE)
+					$len = 0;
+				
+				$i = 0;
+				while($i < $len)
+				{
+					unlink($path_arr[$i]['path']);
+					$i++;
+				}
+
 				$query = "DELETE FROM `users` WHERE `users`.`id` = ?";
 				$stmt = $conn->prepare($query);
 				$stmt->execute([$user_id]);
@@ -42,17 +58,6 @@ if (!empty($_POST['check-confirm']) && !empty($_POST['confirm-passwd']) && !empt
 				$stmt = $conn->prepare($query);
 				$stmt->execute([$user_id]);
 				$path_arr = $stmt->fetchAll((PDO::FETCH_ASSOC));
-
-				$len = count($path_arr);
-				if ($len === FALSE)
-					$len = 0;
-				
-				$i = 0;
-				while($i < $len)
-				{
-					unlink($path_arr[$i]['path']);
-					$i++;
-				}
 
 				header('location: signout.php');
 				exit();
