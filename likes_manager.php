@@ -32,7 +32,7 @@ if (isset($_POST['likes']) && isset($_POST['image_path']) && isset($_POST['image
 			$stmt->execute([$image_id, $user_id]);
 			$res = $stmt->fetch(PDO::FETCH_ASSOC);
 			unset($stmt);
-			if (!$res)
+			if ($res['liked'] == 0)
 			{
 				$query = "UPDATE `images` SET `likes` = ? 
 							WHERE `id` = ?";
@@ -54,7 +54,7 @@ if (isset($_POST['likes']) && isset($_POST['image_path']) && isset($_POST['image
 				if ($res)
 				{
 					if ($res['notifications'] == 1)
-						mail_like_notif($res['email'], $res['username'],$liker);// owner will also receive a notification.
+						mail_like_notif($res['email'], $res['username'],$liker);
 				}
 
 				echo $likes;
