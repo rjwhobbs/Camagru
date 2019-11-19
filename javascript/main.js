@@ -69,6 +69,12 @@ photoButton.addEventListener('click', function(e)
 	xhttp.send("img=" + data + "&sticker=" + selected);
 	stickers.style.display = 'none';
 
+	stickerMenu2[0].checked = false;
+	stickerMenu2[1].checked = false;
+	stickerMenu2[2].checked = false;
+	stickerMenu2[3].checked = false;
+	stickerMenu2[4].checked = false;
+
 	e.preventDefault();
 }, false);
 
@@ -306,4 +312,11 @@ imageUpload.addEventListener('change', function()
 		xhttp.open("POST", "upload_user_pic.php", true);
 		xhttp.send(formData);
 	}
+
+	stickerMenu2[0].checked = false;
+	stickerMenu2[1].checked = false;
+	stickerMenu2[2].checked = false;
+	stickerMenu2[3].checked = false;
+	stickerMenu2[4].checked = false;
+	
 });
