@@ -34,9 +34,15 @@ require ('./header.php');
 <span>Email notifications are <?= $_SESSION['notify']?></span><br>
 <?php
 	if ($_SESSION['notify'] == "on")
-		require 'turn_notif_off.html';
+	{?>
+		<a href="notif_change.php"><input type="submit" value="Turn off"></a>
+	<?php
+	}
 	else if ($_SESSION['notify'] == "off")
-		require 'turn_notif_on.html';
+	{?>
+		<a href="notif_change.php"><input type="submit" value="Turn on"></a>
+	<?php
+	}
 ?><br><br>
 <form id="delete-account" action="delete_account.php" method="post">
 	<span>Delete your account.<br> 

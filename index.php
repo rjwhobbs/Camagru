@@ -44,7 +44,7 @@ require ('./header.php');
 			<form action="comment.php" method="post">
 				<input type="hidden" name="image_src" value=<?php echo $images[$i]['path'] ?>>
 				<input type="hidden" name="image_id" value=<?php echo $images[$i]['id'] ?>>
-				<input type="submit" name="add_comment" value="View /Add Comments">
+				<input type="submit" name="add_comment" value="View/Add Comments">
 			</form><br>
 		</div><br>
 		<?php $i++; ?>

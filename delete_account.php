@@ -34,6 +34,16 @@ if (!empty($_POST['check-confirm']) && !empty($_POST['confirm-passwd']) && !empt
 					$i++;
 				}
 
+				$query = "SELECT `profile-pic` FROM `users` WHERE `id` = ?";
+				$stmt = $conn->prepare($query);
+				$stmt->execute([$user_id]);
+				$res = $stmt->fetch(PDO::FETCH_ASSOC);
+
+				if ($res)
+					unlink($res['profile-pic']);
+					
+				unset($stmt);
+
 				$query = "DELETE FROM `users` WHERE `users`.`id` = ?";
 				$stmt = $conn->prepare($query);
 				$stmt->execute([$user_id]);

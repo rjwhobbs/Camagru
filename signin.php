@@ -2,8 +2,9 @@
 session_start();
 require ('./controller.php');
 require ('./form_block.php');
+require ('./header.php');
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -11,7 +12,7 @@ require ('./form_block.php');
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Sign in</title>
 </head>
-<body>
+<body> -->
 	<h1>Sign in</h1>
 	<div>
 		<?php 	

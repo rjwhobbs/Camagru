@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-signup']))
 	$bytes = random_bytes(6);	
 	$rand = bin2hex($bytes);
 	if (!empty($_FILES['profile-pic']['name']))
-		$profile_pic_path = 'images/'.$rand;
+		$profile_pic_path = 'images/'.$rand.".png";
 
 	//Username checks
 	if (empty($username))

@@ -1,4 +1,4 @@
 
-	<br><br><footer>Camagru was built by &copy;rhobbs</footer>
+	<br><br><footer>&copy;Camagru was built by rhobbs and his friends at WTC</footer>
 </body>
 </html>
