@@ -12,7 +12,7 @@
 <body>
 	<h1>This is Camagru</h1>
 	<?php
-		if (isset($_SESSION['user_id'])) // This could mirror validation.php
+		if (isset($_SESSION['user_id'])) 
 		{?>
 			<a href="signout.php"><input type="submit" value="Sign Out"></a>
 			<a href="profile.php"><input type="submit" value="Profile"></a> 

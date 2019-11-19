@@ -13,7 +13,7 @@ if (!empty($_POST['path']))
 		else
 			$edited = 1;
 		$user_id = $_SESSION['user_id'];
-		$sql = 'INSERT INTO `images` (`path`, `user_id`, `edited`) VALUES (?, ?, ?)'; // remove edited from table creation!!!!!!!!
+		$sql = 'INSERT INTO `images` (`path`, `user_id`, `edited`) VALUES (?, ?, ?)'; 
 		$stmt = $conn->prepare($sql);
 		$stmt->execute([$file, $user_id, $edited]);
 		unset($stmt);

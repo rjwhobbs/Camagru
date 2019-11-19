@@ -132,7 +132,6 @@ function get_image_author_email($id)
 		$stmt = $conn->prepare($query);
 		$stmt->execute([$id]);
 		$res = $stmt->fetch(PDO::FETCH_ASSOC);
-		//var_dump($id); die;
 		return $res['email'];
 	}
 	else

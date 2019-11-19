@@ -1,9 +1,8 @@
 <?php
 function mail_like_notif($owner_email, $user ,$liker)
 {
-	$email_sender = "rhobbs@student.wethinkcode.co.za"; // DELETE ME LATER !!!!!!!!!!
-	//$email_sender = "mikethetrooper@gmail.com"; // DELETE ME LATER !!!!!!!!!!
-
+	$email_sender = "rhobbs@student.wethinkcode.co.za"; 
+	
 	$headers = "From: $email_sender"."\r\n";
 	$headers .= "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
@@ -16,8 +15,8 @@ function mail_like_notif($owner_email, $user ,$liker)
 
 function mail_comment_notif($owner_email, $user ,$commenter)
 {
-	$email_sender = "rhobbs@student.wethinkcode.co.za"; // DELETE ME LATER !!!!!!!!!!
-	//$email_sender = "mikethetrooper@gmail.com"; // DELETE ME LATER !!!!!!!!!!
+	$email_sender = "rhobbs@student.wethinkcode.co.za"; 
+
 	$headers = "From: $email_sender"."\r\n";
 	$headers .= "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=UTF-8\r\n";

@@ -15,7 +15,7 @@ else if ($_SESSION['notify'] == 'off')
 }
 $query = 'UPDATE `users` SET `notifications` = ? WHERE `id` = ?';
 $stmt = $conn->prepare($query);
-$stmt->execute([$notify_state, $_SESSION['user_id']]); //Let's think how to do error handling here;
+$stmt->execute([$notify_state, $_SESSION['user_id']]); 
 unset($stmt);
 $_SESSION['notify'] = $notify_value;
 header('location: profile.php');

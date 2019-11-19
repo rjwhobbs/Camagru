@@ -14,7 +14,7 @@ require ('./form_block.php');
 <body>
 	<h1>Sign in</h1>
 	<div>
-		<?php 	//this isn't showing the mesage, it directs from verification.php
+		<?php 	
 			if (isset($_SESSION['message']))
 			{	
 				echo $_SESSION['message'];

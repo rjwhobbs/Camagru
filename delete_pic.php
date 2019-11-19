@@ -1,5 +1,5 @@
 <?php
-session_start(); // Should we also delete it from the folder
+session_start(); 
 require ('./connection.php');
 require ('./valid_session_check.php');
 if (!empty($_POST['deletepath']) ) 
