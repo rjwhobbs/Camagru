@@ -288,6 +288,7 @@ imageUpload.addEventListener('change', function()
 	imageUpload.style.display = 'none';
 	imageLable.style.display = 'none';
 	save.style.display = 'inline';
+	stickers.style.display = 'none';
 	if(file)
 	{
 		let xhttp = new XMLHttpRequest();
