@@ -60,7 +60,6 @@ require ('./query_functions.php');
 				<form action="delete_img.php" method="POST">
 					<input type="hidden" name="path" value=<?php echo $thumbnails[$i]['path'];?>>
 					<input type="hidden" name="id" value=<?php echo $id;?>>
-					<!-- <button>Delete</button> -->
 					<input type="submit" name="Delete" value="Delete">
 				</form>
 				<?php $i++; ?>
