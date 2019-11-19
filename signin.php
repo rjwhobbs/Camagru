@@ -26,8 +26,8 @@ require ('./form_block.php');
 		<span>Username:</span><input type="text" placeholder="username" name="username" required/><br>
 		<span>Password:</span><input type="password" placeholder="password" name="passwd" required/><br>
 		<input type="submit" name="submit-signin" value="Sign in">
-		<a href="forgotpasswd.php"><input type="submit" value="Forgot your password?"></a>
 	</form>
+	<a href="forgotpasswd.php"><input type="submit" value="Forgot your password?"></a>
 	<br>
 	<span>Don't have an account?</span><br>
 	<a href="form.php"><input type="submit" value="Sign Up"></a>

@@ -94,7 +94,6 @@ stickerMenu2[0].addEventListener('change', function(e) {
 	selected = selected + e.target.value + ':';
 	if	(stickerMenu2[0].checked == false)
 		selected = selected.replace(/sticker1.png:/g,'');
-	console.log(selected);
 	e.preventDefault();
 })
 
@@ -120,7 +119,6 @@ stickerMenu2[1].addEventListener('change', function(e) {
 	selected = selected + e.target.value + ':';
 	if	(stickerMenu2[1].checked == false)
 		selected = selected.replace(/sticker2.png:/g,'');
-	console.log(selected);
 	e.preventDefault();
 })
 
@@ -146,7 +144,6 @@ stickerMenu2[2].addEventListener('change', function(e) {
 	selected = selected + e.target.value + ':';
 	if	(stickerMenu2[2].checked == false)
 		selected = selected.replace(/sticker3.png:/g,'');
-	console.log(selected);
 	e.preventDefault();
 })
 
@@ -172,7 +169,6 @@ stickerMenu2[3].addEventListener('change', function(e) {
 	selected = selected + e.target.value + ':';
 	if	(stickerMenu2[3].checked == false)
 		selected = selected.replace(/sticker4.png:/g,'');
-	console.log(selected);
 	e.preventDefault();
 })
 
@@ -198,7 +194,6 @@ stickerMenu2[4].addEventListener('change', function(e) {
 	selected = e.target.value;
 	if (stickerMenu2[4].checked == false)
 		selected = selected.replace(/nosticker/g,'');
-	console.log(selected);
 	e.preventDefault();
 })
 
@@ -274,7 +269,6 @@ function deleteFromFile()
 		{
 			photos.innerHTML = this.responseText; 
 			path = '';
-			//create an element
 		}
 	};
   	xhttp.open("POST", "delete_pic.php", true);
@@ -302,7 +296,6 @@ imageUpload.addEventListener('change', function()
 			if (this.readyState == 4 && this.status == 200)
 			{
 				path = this.responseText;
-				//console.log(path);
 				photos.appendChild(img);
 				img.setAttribute('src', path);
 				selected = '';	

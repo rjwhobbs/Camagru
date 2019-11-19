@@ -3,15 +3,12 @@ session_start();
 require ('./valid_session_check.php');
 require ('./connection.php');
 include ('./helpers.php');
-// var_dump ($_FILES);
-// var_dump ($_POST);
-//echo $_FILES['file'];
 if (!empty($_FILES) && !empty($_POST['sticker']))
 {
 	$sticker_choice = $_POST['sticker'];
 	$bytes = random_bytes(4);	
 	$rand = bin2hex($bytes);
-	$pic_path = "images/".$rand.uniqid().".png";
+	$oripic_path = "images/".$rand.uniqid().".png";
 
 	if (image_check($_FILES['file']['type'], 
 					$_FILES['file']['tmp_name']) === FALSE)
@@ -20,8 +17,9 @@ if (!empty($_FILES) && !empty($_POST['sticker']))
 		exit ();
 	} 
 
-	copy($_FILES['file']['tmp_name'], $pic_path);
-	$upload = imagecreatefromstring(file_get_contents($pic_path));
+	copy($_FILES['file']['tmp_name'], $oripic_path);
+	$upload = imagecreatefromstring(file_get_contents($oripic_path));
+	unlink($oripic_path);
 
 	if (strpos($sticker_choice, "nosticker") !== FALSE)
 		$clean_arr = array();	
