@@ -5,8 +5,8 @@ function get_images()
 	$query = 'SELECT * FROM `images` WHERE `edited` = ? ORDER BY `images`.`creation_date` DESC ';
 	$stmt = $conn->prepare($query);
 	$stmt->execute([1]);
-	$array = $stmt->fetchAll(PDO::FETCH_ASSOC); // error handling?
-	unset($stmt); // is unsetting stmt here necessary, will closing the func unset it?
+	$array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	unset($stmt);
 	return $array;
 }
 
