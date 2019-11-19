@@ -326,6 +326,7 @@ else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['verification']
 								Please make sure to fill in all the feilds correctly.<br> 
 								Please enter your email address and try again.<br>".$bad_passwd;
 		header('location: forgotpasswd.php');
+		exit();
 	}
 	else
 	{
