@@ -1,8 +1,8 @@
 <?php
 session_start();
 require ('./valid_session_check.php');
-require ('./header.php');
 require ('./query_functions.php');
+require ('./header.php');
 ?>
 	<h1>Camera Editor</h1>
 	<h2>Please select a sticker inorder to take a picture.</h2>
