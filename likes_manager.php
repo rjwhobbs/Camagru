@@ -1,12 +1,10 @@
 <?php
 session_start();
-//require ('./valid_session_check.php');
 require ('./connection.php');
 include ('./query_functions.php');
 include ('./mail_notif_function.php');
 if (isset($_POST['likes']) && isset($_POST['image_path']) && isset($_POST['image_id']) && isset($_SESSION['user_id']))
 {
-	//maybe some sanitization?
 	$image_id = $_POST['image_id'];
 	$image_path = $_POST['image_path'];
 	$user_id = $_SESSION['user_id'];
@@ -23,7 +21,7 @@ if (isset($_POST['likes']) && isset($_POST['image_path']) && isset($_POST['image
 		if ($image_id == $res['id'])
 		{
 			$image_owner_id = $res['user_id'];
-			if ($image_owner_id == $user_id) // user can't like his own image
+			if ($image_owner_id == $user_id)
 				$liker = "You";
 			else
 				$liker = $_SESSION['username'];
