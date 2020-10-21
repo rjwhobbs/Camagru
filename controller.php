@@ -478,7 +478,10 @@ else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_passwd']))
 *	COMMENT ADDER / COMMENT.PHP
 *************************************************/
 
-else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_comment']) && isset($_POST['comment']) && !empty($_SESSION['image_id']))
+else if ($_SERVER['REQUEST_METHOD'] == 'POST' && 
+			isset($_POST['add_comment']) && 
+			isset($_POST['comment']) && 
+			!empty($_SESSION['image_id']))
 {
 	$comment = filter_input(INPUT_POST, 'comment', FILTER_SANITIZE_STRING);
 	$image_id = filter_var($_SESSION['image_id'], FILTER_SANITIZE_NUMBER_INT); 
