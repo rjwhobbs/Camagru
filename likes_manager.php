@@ -32,7 +32,7 @@ if (isset($_POST['likes']) && isset($_POST['image_path']) && isset($_POST['image
 			$stmt->execute([$image_id, $user_id]);
 			$res = $stmt->fetch(PDO::FETCH_ASSOC);
 			unset($stmt);
-			if ($res['liked'] == 0)
+			if (!$res)
 			{
 				$query = "UPDATE `images` SET `likes` = ? 
 							WHERE `id` = ?";
