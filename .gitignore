@@ -1,1 +1,11 @@
 .DS_Store
+images/*
+!ChocChip.png
+!chocshortbread.png
+!error.png
+!peanut.png
+!shortbread.png
+!sticker1.png
+!sticker2.png
+!sticker3.png
+!sticker4.png
