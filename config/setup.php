@@ -40,6 +40,11 @@ try
 				`creation_date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, 
 				`likes` INT DEFAULT NULL,
 				`edited` BOOLEAN NOT NULL DEFAULT TRUE,
+				CONSTRAINT `images_id_constraint`
+				FOREIGN KEY (`user_id`)
+				REFERENCES $DB_NAME.`users` (`id`)
+				ON DELETE CASCADE
+  				ON UPDATE CASCADE,
 				PRIMARY KEY (`id`)) ENGINE = InnoDB";
 	$stmt = $conn->prepare($createtab);
 	$stmt->execute();
@@ -50,6 +55,16 @@ try
 				`image_id` INT NOT NULL,
 				`user_id` INT NOT NULL,
 				`creation_date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+				CONSTRAINT `comments_id_constraint`
+				FOREIGN KEY (`user_id`)
+				REFERENCES $DB_NAME.`users` (`id`)
+				ON DELETE CASCADE
+  				ON UPDATE CASCADE,
+				CONSTRAINT `comments_images_id_constraint`
+				FOREIGN KEY (`image_id`)
+				REFERENCES $DB_NAME.`images` (`id`)
+				ON DELETE CASCADE
+  				ON UPDATE CASCADE,
 				PRIMARY KEY (`id`)) ENGINE = InnoDB"; 
 	$stmt = $conn->prepare($createtab);
 	$stmt->execute();
@@ -59,6 +74,16 @@ try
 				`user_id` INT NOT NULL,
 				`image_id` INT NOT NULL,
 				`liked` BOOLEAN NOT NULL DEFAULT FALSE,
+				CONSTRAINT `likes_id_constraint`
+				FOREIGN KEY (`user_id`)
+				REFERENCES $DB_NAME.`users` (`id`)
+				ON DELETE CASCADE
+  				ON UPDATE CASCADE,
+				CONSTRAINT `likes_images_id_constraint`
+				FOREIGN KEY (`image_id`)
+				REFERENCES $DB_NAME.`images` (`id`)
+				ON DELETE CASCADE
+  				ON UPDATE CASCADE,
 				PRIMARY KEY (`id`)) ENGINE = InnoDB";
 	$stmt = $conn->prepare($createtab);
 	$stmt->execute();

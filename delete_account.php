@@ -49,25 +49,25 @@ if (!empty($_POST['check-confirm']) && !empty($_POST['confirm-passwd']) && !empt
 				$stmt->execute([$user_id]);
 				unset($stmt);
 
-				$query = "DELETE FROM `images` WHERE `user_id` = ?";
-				$stmt = $conn->prepare($query);
-				$stmt->execute([$user_id]);
-				unset($stmt);
+				// $query = "DELETE FROM `images` WHERE `user_id` = ?";
+				// $stmt = $conn->prepare($query);
+				// $stmt->execute([$user_id]);
+				// unset($stmt);
 
-				$query = "DELETE FROM `comments` WHERE `user_id` = ?";
-				$stmt = $conn->prepare($query);
-				$stmt->execute([$user_id]);
-				unset($stmt);
+				// $query = "DELETE FROM `comments` WHERE `user_id` = ?";
+				// $stmt = $conn->prepare($query);
+				// $stmt->execute([$user_id]);
+				// unset($stmt);
 
-				$query = "DELETE FROM `likes` WHERE `user_id` = ?"; 
-				$stmt = $conn->prepare($query);
-				$stmt->execute([$user_id]);
-				unset($stmt);
+				// $query = "DELETE FROM `likes` WHERE `user_id` = ?"; 
+				// $stmt = $conn->prepare($query);
+				// $stmt->execute([$user_id]);
+				// unset($stmt);
 
-				$query = "SELECT * FROM `images` WHERE `user_id` = ?";
-				$stmt = $conn->prepare($query);
-				$stmt->execute([$user_id]);
-				$path_arr = $stmt->fetchAll((PDO::FETCH_ASSOC));
+				// $query = "SELECT * FROM `images` WHERE `user_id` = ?";
+				// $stmt = $conn->prepare($query);
+				// $stmt->execute([$user_id]);
+				// $path_arr = $stmt->fetchAll((PDO::FETCH_ASSOC));
 
 				header('location: signout.php');
 				exit();

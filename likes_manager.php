@@ -11,7 +11,9 @@ if (isset($_POST['likes']) && isset($_POST['image_path']) && isset($_POST['image
 
 	try
 	{
-		$conn->beginTransaction();
+		$query = "LOCK TABLES `images` WRITE, `likes` WRITE, `users` WRITE";
+		$conn->query($query);
+
 		$query = "SELECT * FROM `images` WHERE `path` = ? && `id` = ?";
 		$stmt = $conn->prepare($query);
 		$stmt->execute([$image_path, $image_id]);
@@ -70,12 +72,14 @@ if (isset($_POST['likes']) && isset($_POST['image_path']) && isset($_POST['image
 		}
 		else
 			echo get_image_likes($image_path);
-
-		$conn->commit();
+		
+		$query = "UNLOCK TABLES";
+		$conn->query($query);
 	}
 	catch (Throwable $e)
 	{
-		$conn->rollback();
+		$query = "UNLOCK TABLES";
+		$conn->query($query);
 		echo $e->getMessage();
 	}
 }
