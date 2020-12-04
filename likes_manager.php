@@ -13,6 +13,8 @@ if (isset($_POST['likes']) && isset($_POST['image_path']) && isset($_POST['image
 	{
 		// Lets try use this join some where
 		// SELECT * FROM `images` INNER JOIN `likes` ON `images`.`id` = `likes`.`image_id` WHERE (`images`.`user_id` = 2 AND `likes`.`user_id` = 2) 
+		// or
+		// SELECT `images`.`likes`, `likes`.`liked` FROM `images` INNER JOIN `likes` ON `images`.`id` = `likes`.`image_id` WHERE (`images`.`user_id` = 2 AND `likes`.`user_id` = 2)
 		$query = "LOCK TABLES `images` WRITE, `likes` WRITE, `users` WRITE";
 		$conn->query($query);
 
