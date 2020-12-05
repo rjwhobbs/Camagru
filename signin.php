@@ -1,8 +1,9 @@
 <?php
 session_start();
-require (getcwd().'/app/controller.php');
-require (getcwd().'/form_block.php');
-require (getcwd().'/header.php');
+require ('globals.php');
+require ($path.'/app/controller.php');
+require ($path.'/app/form_block.php');
+require ($path.'/header.php');
 ?>
 	<h1>Sign in</h1>
 	<div>
@@ -24,5 +25,5 @@ require (getcwd().'/header.php');
 	<span>Don't have an account?</span><br>
 	<a href="form.php"><input type="submit" value="Sign Up"></a>
 <?php
-require (getcwd().'/footer.php');
+require ($path.'/footer.php');
 ?>

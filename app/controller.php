@@ -13,7 +13,7 @@ $errors = array();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-signup']))
 {
-	require ($path.'/form_block.php');
+	require ($path.'/app/form_block.php');
 
 	$_SESSION['message'] = "";
 	$username = $_POST['username'];
