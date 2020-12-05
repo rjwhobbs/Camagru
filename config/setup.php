@@ -1,5 +1,5 @@
 <?php
-require(__DIR__.'/database.php');
+require(getcwd().'/database.php');
 try
 {
 	$conn = new PDO('mysql:host='.$DB_HOST, $DB_USER, $DB_PASSWORD);

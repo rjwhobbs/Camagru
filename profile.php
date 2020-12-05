@@ -1,8 +1,8 @@
 <?php
 session_start();
-require (__DIR__.'/valid_session_check.php');
-require (__DIR__.'/controller.php');
-require (__DIR__.'/header.php');
+require (getcwd().'/valid_session_check.php');
+require (getcwd().'/app/controller.php');
+require (getcwd().'/header.php');
 ?>
 <h1>Profile settings for <?= $_SESSION['username']?></h1>
 <?php
@@ -55,5 +55,5 @@ require (__DIR__.'/header.php');
 </form>
 <button type="submit" form="delete-account">Delete account</button>
 <?php
-require (__DIR__.'/footer.php');
+require (getcwd().'/footer.php');
 ?>

@@ -1,8 +1,8 @@
 <?php
 session_start();
-require (__DIR__.'/valid_session_check.php');
-require (__DIR__.'/connection.php');
-include (__DIR__.'/helpers.php');
+require (getcwd().'/valid_session_check.php');
+require (getcwd().'/connection.php');
+include (getcwd().'/helpers.php');
 if (isset($_POST['img']) && !empty($_POST['sticker']))
 {
 	$img = $_POST['img'];

@@ -1,8 +1,8 @@
 <?php
 session_start();
-require (__DIR__.'/valid_session_check.php'); 
-require (__DIR__.'/controller.php');
-require (__DIR__.'/header.php');
+require (getcwd().'/valid_session_check.php'); 
+require (getcwd().'/app/controller.php');
+require (getcwd().'/header.php');
 if (!empty($_POST['image_src']) && !empty($_POST['image_id']))
 {
 	$_SESSION['image_src'] = $_POST['image_src'];
@@ -47,5 +47,5 @@ if (count($errors) > 0)
 	?>
 </div>
 <?php
-require (__DIR__.'/footer.php');
+require (getcwd().'/footer.php');
 ?>

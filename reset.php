@@ -1,6 +1,6 @@
 <?php
 session_start();
-require (__DIR__.'/controller.php'); 
+require (getcwd().'/app/controller.php'); 
 if (isset($_GET['vcode']))
 {
 	try

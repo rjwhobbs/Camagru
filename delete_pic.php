@@ -1,7 +1,7 @@
 <?php
 session_start(); 
-require (__DIR__.'/connection.php');
-require (__DIR__.'/valid_session_check.php');
+require (getcwd().'/connection.php');
+require (getcwd().'/valid_session_check.php');
 if (!empty($_POST['deletepath']) ) 
 {
 	

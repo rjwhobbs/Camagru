@@ -1,7 +1,7 @@
 <?php
 session_start();
-require (__DIR__.'/controller.php');
-require (__DIR__.'/valid_session_check.php'); 
+require (getcwd().'/app/controller.php');
+require (getcwd().'/valid_session_check.php'); 
 
 if ($_SESSION['notify'] == 'on')
 {

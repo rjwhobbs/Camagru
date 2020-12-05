@@ -1,7 +1,7 @@
 <?php
 function get_images()
 {
-	require (__DIR__.'/connection.php');
+	require (getcwd().'/connection.php');
 	$query = 'SELECT * FROM `images` WHERE `edited` = ? ORDER BY `images`.`creation_date` DESC ';
 	$stmt = $conn->prepare($query);
 	$stmt->execute([1]);
@@ -14,7 +14,7 @@ function get_image_author_name($id)
 {
 	if ($id > 0)
 	{
-		require (__DIR__.'/connection.php');
+		require (getcwd().'/connection.php');
 		$query = 'SELECT `username` FROM `users` WHERE `id` = ?';
 		$stmt = $conn->prepare($query);
 		$stmt->execute([$id]);
@@ -29,7 +29,7 @@ function verify_image_id($id)
 {
 	if ($id > 0)
 	{
-		require (__DIR__.'/connection.php');
+		require (getcwd().'/connection.php');
 		$query = 'SELECT `path` FROM `images` WHERE `id` = ?';
 		$stmt = $conn->prepare($query);
 		$stmt->execute([$id]);
@@ -45,7 +45,7 @@ function verify_image_id($id)
 
 function get_image_comments($image_id)
 {
-	require (__DIR__.'/connection.php');
+	require (getcwd().'/connection.php');
 	$query = 'SELECT * FROM `comments` WHERE `image_id` = ? ORDER BY `comments`.`creation_date` DESC';
 	$stmt = $conn->prepare($query);
 	$stmt->execute([$image_id]);
@@ -58,7 +58,7 @@ function get_comment_author($user_id) // So this function does the samething as 
 {
 	if ($user_id > 0)
 	{
-		require (__DIR__.'/connection.php');
+		require (getcwd().'/connection.php');
 		$query = 'SELECT `username` FROM `users` WHERE `id` = ?';
 		$stmt = $conn->prepare($query);
 		$stmt->execute([$user_id]);
@@ -73,7 +73,7 @@ function get_image_author_from_path($path)
 {
 	if (!empty($path))
 	{
-		require (__DIR__.'/connection.php');
+		require (getcwd().'/connection.php');
 		$query = "SELECT `user_id` FROM `images` WHERE `path` = ?";
 		$stmt = $conn->prepare($query);
 		$stmt->execute([$path]);
@@ -91,7 +91,7 @@ function get_image_path_by_id($user_id)
 {
 	if ($user_id > 0)
 	{
-		require (__DIR__.'/connection.php');
+		require (getcwd().'/connection.php');
 		$query = 'SELECT * FROM `images` WHERE `user_id` = ? ORDER BY `images`.`creation_date` DESC';
 		$stmt = $conn->prepare($query);
 		$stmt->execute([$user_id]);
@@ -108,7 +108,7 @@ function get_image_path_by_id($user_id)
 function get_image_likes($image_path)
 {
 	
-	require (__DIR__.'/connection.php');
+	require (getcwd().'/connection.php');
 	$query = 'SELECT `likes` FROM `images` WHERE `path` = ?';
 	$stmt = $conn->prepare($query);
 	$stmt->execute([$image_path]);
@@ -127,7 +127,7 @@ function get_image_author_email($id)
 {
 	if ($id > 0)
 	{
-		require (__DIR__.'/connection.php');
+		require (getcwd().'/connection.php');
 		$query = 'SELECT `email` FROM `users` WHERE `id` = ?';
 		$stmt = $conn->prepare($query);
 		$stmt->execute([$id]);
@@ -142,7 +142,7 @@ function get_image_owner_id($image_id)
 {
 	if (!empty($image_id))
 	{
-		require (__DIR__.'/connection.php');
+		require (getcwd().'/connection.php');
 		$query = "SELECT `user_id` FROM `images` WHERE `id` = ?";
 		$stmt = $conn->prepare($query);
 		$stmt->execute([$image_id]);
@@ -160,7 +160,7 @@ function get_owner_notif($user_id)
 {
 	if ($user_id > 0)
 	{
-		require (__DIR__.'/connection.php');
+		require (getcwd().'/connection.php');
 		$query = "SELECT * FROM `users` WHERE `id` = ?";
 		$stmt = $conn->prepare($query);
 		$stmt->execute([$user_id]);
@@ -178,7 +178,7 @@ function get_profile_pic($user_id)
 {
 	if ($user_id > 0)
 	{
-		require (__DIR__.'/connection.php');
+		require (getcwd().'/connection.php');
 		$query = "SELECT * FROM `users` WHERE `id` = ?";
 		$stmt = $conn->prepare($query);
 		$stmt->execute([$user_id]);
