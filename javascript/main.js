@@ -277,7 +277,7 @@ function deleteFromFile()
 			path = '';
 		}
 	};
-  	xhttp.open("POST", "delete_pic.php", true);
+  	xhttp.open("POST", "app/delete_pic.php", true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("deletepath=" + path);
 }

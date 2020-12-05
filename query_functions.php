@@ -69,14 +69,14 @@ function get_comment_author($user_id) // So this function does the samething as 
 		return "";
 }
 
-function get_image_author_from_path($path)
+function get_image_author_from_path($author_path)
 {
-	if (!empty($path))
+	if (!empty($author_path))
 	{
 		require (getcwd().'/connection.php');
 		$query = "SELECT `user_id` FROM `images` WHERE `path` = ?";
 		$stmt = $conn->prepare($query);
-		$stmt->execute([$path]);
+		$stmt->execute([$author_path]);
 		$res = $stmt->fetch(PDO::FETCH_ASSOC);
 		if (!$res)
 			return "Unkown";
