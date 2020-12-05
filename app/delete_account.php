@@ -31,7 +31,7 @@ if (!empty($_POST['check-confirm']) && !empty($_POST['confirm-passwd']) && !empt
 				$i = 0;
 				while($i < $len)
 				{
-					unlink($path_arr[$i]['path']);
+					unlink('../'.$path_arr[$i]['path']);
 					$i++;
 				}
 

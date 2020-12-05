@@ -57,7 +57,7 @@ require (getcwd().'/header.php');
 			while ($i < $len)
 			{?>
 				<img src=<?php echo $thumbnails[$i]['path']?>>
-				<form action="delete_img.php" method="POST">
+				<form action="app/delete_img.php" method="POST">
 					<input type="hidden" name="path" value=<?php echo $thumbnails[$i]['path'];?>>
 					<input type="hidden" name="id" value=<?php echo $id;?>>
 					<input type="submit" name="Delete" value="Delete">

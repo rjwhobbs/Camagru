@@ -1,4 +1,5 @@
 <?php
+require ('./globals.php');
 require ($path.'/connection.php');
 include ($path.'/mail_verification_code.php');
 include ($path.'/helpers.php');
