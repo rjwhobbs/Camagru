@@ -1,8 +1,9 @@
 <?php
 session_start();
-require (getcwd().'/valid_session_check.php');
-require (getcwd().'/app/controller.php');
-require (getcwd().'/header.php');
+require ('globals.php');
+require ($path.'/valid_session_check.php');
+require ($path.'/app/controller.php');
+require ($path.'/header.php');
 ?>
 <h1>Profile settings for <?= $_SESSION['username']?></h1>
 <?php
@@ -44,7 +45,7 @@ require (getcwd().'/header.php');
 	<?php
 	}
 ?><br><br>
-<form id="delete-account" action="delete_account.php" method="post">
+<form id="delete-account" action="app/delete_account.php" method="post">
 	<span>Delete your account.<br> 
 			Enter the required feilds and click 'Delete account'. <br>
 			WARNING! This action cannot be undone!</span><br>

@@ -1,7 +1,8 @@
 <?php
 session_start();
-require (getcwd().'/app/controller.php');
-require (getcwd().'/header.php');
+require ('globals.php');
+require ($path.'/app/controller.php');
+require ($path.'/header.php');
 ?>
 <h2>Camagru feed</h2>
 <?php
