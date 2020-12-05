@@ -1,7 +1,7 @@
 <?php
 session_start();
-require ('./valid_session_check.php');
-require ('./connection.php');
+require (__DIR__.'/valid_session_check.php');
+require (__DIR__.'/connection.php');
 if (!empty($_POST['check-confirm']) && !empty($_POST['confirm-passwd']) && !empty($_POST['delete']))
 {
 	$error_checker = FALSE;

@@ -1,8 +1,8 @@
 <?php
 session_start();
-require ('./controller.php');
-require ('./form_block.php');
-require ('./header.php');
+require (__DIR__.'/controller.php');
+require (__DIR__.'/form_block.php');
+require (__DIR__.'/header.php');
 ?>
 <!-- <!DOCTYPE html>
 <html lang="en">
@@ -33,5 +33,5 @@ require ('./header.php');
 	<span>Don't have an account?</span><br>
 	<a href="form.php"><input type="submit" value="Sign Up"></a>
 <?php
-require ('./footer.php');
+require (__DIR__.'/footer.php');
 ?>

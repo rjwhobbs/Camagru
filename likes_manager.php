@@ -1,8 +1,8 @@
 <?php
 session_start();
-require ('./connection.php');
-include ('./query_functions.php');
-include ('./mail_notif_function.php');
+require (__DIR__.'/connection.php');
+include (__DIR__.'/query_functions.php');
+include (__DIR__.'/mail_notif_function.php');
 if (isset($_POST['likes']) && isset($_POST['image_path']) && isset($_POST['image_id']) && isset($_SESSION['user_id']))
 {
 	$image_id = $_POST['image_id'];

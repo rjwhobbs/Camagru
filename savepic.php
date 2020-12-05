@@ -1,7 +1,7 @@
 <?php
 session_start();
-require ('./valid_session_check.php');
-require ('./connection.php');
+require (__DIR__.'/valid_session_check.php');
+require (__DIR__.'/connection.php');
 if (!empty($_POST['path']))
 {
 	$file = $_POST['path'];

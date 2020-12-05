@@ -1,5 +1,5 @@
 <?php
-require ('config/database.php');
+require (__DIR__.'/config/database.php');
 try
 {
 	$conn = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);

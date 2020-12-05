@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once ('./controller.php');
-require ('./form_block.php');
-require ('./header.php');
+require_once (__DIR__.'/controller.php');
+require (__DIR__.'/form_block.php');
+require (__DIR__.'/header.php');
 ?>
 <h1>Sign Up</h1>
 <div><?php  
@@ -28,5 +28,5 @@ require ('./header.php');
 	<input type="submit" name="resend-link" value="Resend link">
 </form>
 <?php
-require ('./footer.php')
+require (__DIR__.'/footer.php')
 ?>

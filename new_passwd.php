@@ -1,6 +1,6 @@
 <?php
 session_start();
-require ('./controller.php');
+require (__DIR__.'/controller.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

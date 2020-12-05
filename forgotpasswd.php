@@ -1,7 +1,7 @@
 <?php
 session_start();;
-require ('./controller.php');
-require ('./header.php');
+require (__DIR__.'/controller.php');
+require (__DIR__.'/header.php');
 ?>
 	<h1>Ah shame, you forgot your password.<br> 
 		Don't worry it even happens to wizards like me.

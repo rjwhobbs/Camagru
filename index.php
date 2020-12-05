@@ -1,7 +1,7 @@
 <?php
 session_start();
-require ('./controller.php');
-require ('./header.php');
+require (__DIR__.'/controller.php');
+require (__DIR__.'/header.php');
 ?>
 <h2>Camagru feed</h2>
 <?php
@@ -53,5 +53,5 @@ require ('./header.php');
 ?>
 <script src="javascript/helpers.js"></script>
 <?php
-require ('./footer.php');
+require (__DIR__.'/footer.php');
 ?>

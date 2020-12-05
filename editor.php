@@ -1,8 +1,8 @@
 <?php
 session_start();
-require ('./valid_session_check.php');
-require ('./query_functions.php');
-require ('./header.php');
+require (__DIR__.'/valid_session_check.php');
+require (__DIR__.'/query_functions.php');
+require (__DIR__.'/header.php');
 ?>
 	<h1>Camera Editor</h1>
 	<h2>Please select a sticker inorder to take a picture.</h2>
@@ -69,5 +69,5 @@ require ('./header.php');
 	</div>
 	<script src="javascript/main.js"></script>
 <?php
-require ('./footer.php');
+require (__DIR__.'/footer.php');
 ?>

@@ -1,8 +1,8 @@
 <?php
 session_start();
-require ('./valid_session_check.php');
-require ('./connection.php');
-include ('./helpers.php');
+require (__DIR__.'/valid_session_check.php');
+require (__DIR__.'/connection.php');
+include (__DIR__.'/helpers.php');
 if (!empty($_FILES) && !empty($_POST['sticker']))
 {
 	$sticker_choice = $_POST['sticker'];

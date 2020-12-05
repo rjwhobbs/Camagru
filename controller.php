@@ -1,9 +1,9 @@
 <?php
-require ('./connection.php');
-include ('./mail_verification_code.php');
-include ('./helpers.php');
-include ('./query_functions.php');
-include ('./mail_notif_function.php');
+require (__DIR__.'/connection.php');
+include (__DIR__.'/mail_verification_code.php');
+include (__DIR__.'/helpers.php');
+include (__DIR__.'/query_functions.php');
+include (__DIR__.'/mail_notif_function.php');
 $errors = array(); 
 
 /******************************
@@ -12,7 +12,7 @@ $errors = array();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-signup']))
 {
-	require ('./form_block.php');
+	require (__DIR__.'/form_block.php');
 
 	$_SESSION['message'] = "";
 	$username = $_POST['username'];
