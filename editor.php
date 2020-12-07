@@ -3,7 +3,7 @@ session_start();
 require ('globals.php');
 require ($path.'/valid_session_check.php');
 require ($path.'/app/query_functions.php');
-require ($path.'/header.php');
+require ($path.'/views/header.php');
 ?>
 	<h1>Camera Editor</h1>
 	<h2>Please select a sticker inorder to take a picture.</h2>

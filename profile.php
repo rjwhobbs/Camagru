@@ -3,7 +3,7 @@ session_start();
 require ('globals.php');
 require ($path.'/valid_session_check.php');
 require ($path.'/app/controller.php');
-require ($path.'/header.php');
+require ($path.'/views/header.php');
 ?>
 <h1>Profile settings for <?= $_SESSION['username']?></h1>
 <?php

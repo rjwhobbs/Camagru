@@ -1,7 +1,8 @@
 <?php
-session_start();;
-require (getcwd().'/app/controller.php');
-require (getcwd().'/header.php');
+session_start();
+require ('./globals.php');
+require ($path.'/app/controller.php');
+require ($path.'/views/header.php');
 ?>
 	<h1>Ah shame, you forgot your password.<br> 
 		Don't worry it even happens to wizards like me.

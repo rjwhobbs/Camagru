@@ -2,7 +2,7 @@
 session_start();
 require ('globals.php');
 require ($path.'/app/controller.php');
-require ($path.'/header.php');
+require ($path.'/views/header.php');
 ?>
 <h2>Camagru feed</h2>
 <?php

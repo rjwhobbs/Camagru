@@ -3,7 +3,7 @@ session_start();
 require ('globals.php');
 require ($path.'/app/controller.php');
 require ($path.'/app/form_block.php');
-require ($path.'/header.php');
+require ($path.'/views/header.php');
 ?>
 	<h1>Sign in</h1>
 	<div>
