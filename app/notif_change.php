@@ -1,7 +1,8 @@
 <?php
 session_start();
-require (getcwd().'/app/controller.php');
-require (getcwd().'/valid_session_check.php'); 
+require ('./globals.php');
+require ($path.'/app/controller.php');
+require ($path.'/valid_session_check.php'); 
 
 if ($_SESSION['notify'] == 'on')
 {
@@ -18,6 +19,6 @@ $stmt = $conn->prepare($query);
 $stmt->execute([$notify_state, $_SESSION['user_id']]); 
 unset($stmt);
 $_SESSION['notify'] = $notify_value;
-header('location: profile.php');
+header('location: ../profile.php');
 exit();
 ?>

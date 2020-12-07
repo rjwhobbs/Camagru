@@ -36,12 +36,12 @@ require ($path.'/header.php');
 <?php
 	if ($_SESSION['notify'] == "on")
 	{?>
-		<a href="notif_change.php"><input type="submit" value="Turn off"></a>
+		<a href="app/notif_change.php"><input type="submit" value="Turn off"></a>
 	<?php
 	}
 	else if ($_SESSION['notify'] == "off")
 	{?>
-		<a href="notif_change.php"><input type="submit" value="Turn on"></a>
+		<a href="app/notif_change.php"><input type="submit" value="Turn on"></a>
 	<?php
 	}
 ?><br><br>
