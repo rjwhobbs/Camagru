@@ -1,7 +1,8 @@
 <?php
 function get_images()
 {
-	require (getcwd().'/connection.php');
+	require ('./globals.php');
+	require ($path.'/connection.php');
 	$query = 'SELECT * FROM `images` WHERE `edited` = ? ORDER BY `images`.`creation_date` DESC ';
 	$stmt = $conn->prepare($query);
 	$stmt->execute([1]);
@@ -12,9 +13,10 @@ function get_images()
 
 function get_image_author_name($id)
 {
+	require ('./globals.php');
 	if ($id > 0)
 	{
-		require (getcwd().'/connection.php');
+		require ($path.'/connection.php');
 		$query = 'SELECT `username` FROM `users` WHERE `id` = ?';
 		$stmt = $conn->prepare($query);
 		$stmt->execute([$id]);
@@ -27,9 +29,10 @@ function get_image_author_name($id)
 
 function verify_image_id($id)
 {
+	require ('./globals.php');
 	if ($id > 0)
 	{
-		require (getcwd().'/connection.php');
+		require ($path.'/connection.php');
 		$query = 'SELECT `path` FROM `images` WHERE `id` = ?';
 		$stmt = $conn->prepare($query);
 		$stmt->execute([$id]);
@@ -45,7 +48,8 @@ function verify_image_id($id)
 
 function get_image_comments($image_id)
 {
-	require (getcwd().'/connection.php');
+	require ('./globals.php');
+	require ($path.'/connection.php');
 	$query = 'SELECT * FROM `comments` WHERE `image_id` = ? ORDER BY `comments`.`creation_date` DESC';
 	$stmt = $conn->prepare($query);
 	$stmt->execute([$image_id]);
@@ -56,9 +60,10 @@ function get_image_comments($image_id)
 
 function get_comment_author($user_id) // So this function does the samething as the last one
 {
+	require ('./globals.php');
 	if ($user_id > 0)
 	{
-		require (getcwd().'/connection.php');
+		require ($path.'/connection.php');
 		$query = 'SELECT `username` FROM `users` WHERE `id` = ?';
 		$stmt = $conn->prepare($query);
 		$stmt->execute([$user_id]);
@@ -71,9 +76,10 @@ function get_comment_author($user_id) // So this function does the samething as 
 
 function get_image_author_from_path($author_path)
 {
+	require ('./globals.php');
 	if (!empty($author_path))
 	{
-		require (getcwd().'/connection.php');
+		require ($path.'/connection.php');
 		$query = "SELECT `user_id` FROM `images` WHERE `path` = ?";
 		$stmt = $conn->prepare($query);
 		$stmt->execute([$author_path]);
@@ -89,9 +95,10 @@ function get_image_author_from_path($author_path)
 
 function get_image_path_by_id($user_id)
 {
+	require ('./globals.php');
 	if ($user_id > 0)
 	{
-		require (getcwd().'/connection.php');
+		require ($path.'/connection.php');
 		$query = 'SELECT * FROM `images` WHERE `user_id` = ? ORDER BY `images`.`creation_date` DESC';
 		$stmt = $conn->prepare($query);
 		$stmt->execute([$user_id]);
@@ -107,15 +114,15 @@ function get_image_path_by_id($user_id)
 
 function get_image_likes($image_path)
 {
-	
-	require (getcwd().'/connection.php');
+	require ('./globals.php');
+	require ($path.'/connection.php');
 	$query = 'SELECT `likes` FROM `images` WHERE `path` = ?';
 	$stmt = $conn->prepare($query);
 	$stmt->execute([$image_path]);
 	$res = $stmt->fetch(PDO::FETCH_ASSOC);
 	if ($res)
 	{
-		if ($res['likes'] == NULL)
+		if ($res['likes'] == NULL) 
 			return 0;		
 		return $res['likes'];
 	}
@@ -125,9 +132,10 @@ function get_image_likes($image_path)
 
 function get_image_author_email($id)
 {
+	require ('./globals.php');
 	if ($id > 0)
 	{
-		require (getcwd().'/connection.php');
+		require ($path.'/connection.php');
 		$query = 'SELECT `email` FROM `users` WHERE `id` = ?';
 		$stmt = $conn->prepare($query);
 		$stmt->execute([$id]);
@@ -140,9 +148,10 @@ function get_image_author_email($id)
 
 function get_image_owner_id($image_id)
 {
+	require ('./globals.php');
 	if (!empty($image_id))
 	{
-		require (getcwd().'/connection.php');
+		require ($path.'/connection.php');
 		$query = "SELECT `user_id` FROM `images` WHERE `id` = ?";
 		$stmt = $conn->prepare($query);
 		$stmt->execute([$image_id]);
@@ -158,9 +167,10 @@ function get_image_owner_id($image_id)
 
 function get_owner_notif($user_id)
 {
+	require ('./globals.php');
 	if ($user_id > 0)
 	{
-		require (getcwd().'/connection.php');
+		require ($path.'/connection.php');
 		$query = "SELECT * FROM `users` WHERE `id` = ?";
 		$stmt = $conn->prepare($query);
 		$stmt->execute([$user_id]);
@@ -176,9 +186,10 @@ function get_owner_notif($user_id)
 
 function get_profile_pic($user_id)
 {
+	require ('./globals.php');
 	if ($user_id > 0)
 	{
-		require (getcwd().'/connection.php');
+		require ($path.'/connection.php');
 		$query = "SELECT * FROM `users` WHERE `id` = ?";
 		$stmt = $conn->prepare($query);
 		$stmt->execute([$user_id]);

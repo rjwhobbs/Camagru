@@ -1,8 +1,9 @@
 <?php
 session_start();
-require (getcwd().'/valid_session_check.php');
-require (getcwd().'/query_functions.php');
-require (getcwd().'/header.php');
+require ('globals.php');
+require ($path.'/valid_session_check.php');
+require ($path.'/app/query_functions.php');
+require ($path.'/header.php');
 ?>
 	<h1>Camera Editor</h1>
 	<h2>Please select a sticker inorder to take a picture.</h2>
@@ -69,5 +70,5 @@ require (getcwd().'/header.php');
 	</div>
 	<script src="javascript/main.js"></script>
 <?php
-require (getcwd().'/footer.php');
+require ($path.'/footer.php');
 ?>

@@ -1,8 +1,9 @@
 <?php
 session_start();
-require (getcwd().'/connection.php');
-include (getcwd().'/query_functions.php');
-include (getcwd().'/mail_notif_function.php');
+require ('./globals.php');
+require ($path.'/connection.php');
+include ($path.'/app/query_functions.php');
+include ($path.'/mail_notif_function.php');
 if (isset($_POST['likes']) && isset($_POST['image_path']) && isset($_POST['image_id']) && isset($_SESSION['user_id']))
 {
 	$image_id = $_POST['image_id'];
@@ -15,7 +16,7 @@ if (isset($_POST['likes']) && isset($_POST['image_path']) && isset($_POST['image
 		// SELECT * FROM `images` INNER JOIN `likes` ON `images`.`id` = `likes`.`image_id` WHERE (`images`.`user_id` = 2 AND `likes`.`user_id` = 2) 
 		// or
 		// SELECT `images`.`likes`, `likes`.`liked` FROM `images` INNER JOIN `likes` ON `images`.`id` = `likes`.`image_id` WHERE (`images`.`user_id` = 2 AND `likes`.`user_id` = 2)
-		$query = "LOCK TABLES `images` WRITE, `likes` WRITE, `users` WRITE";
+		$query = "LOCK TABLES `images` WRITE, `likes` WRITE";
 		$conn->query($query);
 
 		$query = "SELECT * FROM `images` WHERE `path` = ? && `id` = ?";
@@ -54,6 +55,9 @@ if (isset($_POST['likes']) && isset($_POST['image_path']) && isset($_POST['image
 					$stmt = $conn->prepare($query);
 					$stmt->execute([$user_id, $image_id, 1]);
 					unset($stmt);
+
+					$query = "UNLOCK TABLES";
+					$conn->query($query);
 					
 					$query = "SELECT * FROM `users` WHERE `id` = ?";
 					$stmt = $conn->prepare($query);
@@ -68,14 +72,27 @@ if (isset($_POST['likes']) && isset($_POST['image_path']) && isset($_POST['image
 
 					echo $likes;
 				}
-				else
+				else 
+				{
+					$query = "UNLOCK TABLES";
+					$conn->query($query);
 					echo get_image_likes($image_path);
+				}
+					
 			}
 			else
+			{
+				$query = "UNLOCK TABLES";
+				$conn->query($query);
 				echo get_image_likes($image_path);
+			}
 		}
 		else
+		{
+			$query = "UNLOCK TABLES";
+			$conn->query($query);
 			echo get_image_likes($image_path);
+		}
 		
 		$query = "UNLOCK TABLES";
 		$conn->query($query);

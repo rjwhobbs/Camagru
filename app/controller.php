@@ -3,7 +3,7 @@ require ('./globals.php');
 require ($path.'/connection.php');
 include ($path.'/mail_verification_code.php');
 include ($path.'/includes/helpers.php');
-include ($path.'/query_functions.php');
+include ($path.'/app/query_functions.php');
 include ($path.'/mail_notif_function.php');
 $errors = array(); 
 

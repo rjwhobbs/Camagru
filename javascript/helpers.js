@@ -9,7 +9,7 @@ function likeFunction(e)
 			this.responseText + " Like+";
 		}
     };
-	xhttp.open("POST", "likes_manager.php", true);
+	xhttp.open("POST", "app/likes_manager.php", true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("likes=" + '1' + "&image_path=" + e.value + "&image_id=" + e.id); 
 }
