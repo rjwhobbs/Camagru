@@ -1,7 +1,7 @@
 <?php
 require ('./globals.php');
 require ($path.'/connection.php');
-include ($path.'/mail_verification_code.php');
+include ($path.'/includes/mail_verification_code.php');
 include ($path.'/includes/helpers.php');
 include ($path.'/app/query_functions.php');
 include ($path.'/includes/mail_notif_function.php');
