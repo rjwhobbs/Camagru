@@ -19,6 +19,6 @@ $stmt = $conn->prepare($query);
 $stmt->execute([$notify_state, $_SESSION['user_id']]); 
 unset($stmt);
 $_SESSION['notify'] = $notify_value;
-header('location: ../profile.php');
+header('location: profile.php');
 exit();
 ?>

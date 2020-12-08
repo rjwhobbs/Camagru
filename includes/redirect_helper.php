@@ -7,4 +7,5 @@
 	{
 		$app_append = "";
 	}
+	// echo $url_len;
 ?>

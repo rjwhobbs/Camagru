@@ -4,6 +4,7 @@ require ('globals.php');
 require ($path.'/valid_session_check.php');
 require ($path.'/app/controller.php');
 require ($path.'/views/header.php');
+require ($path.'/includes/redirect_helper.php');
 ?>
 <h1>Profile settings for <?= $_SESSION['username']?></h1>
 <?php
@@ -36,12 +37,12 @@ require ($path.'/views/header.php');
 <?php
 	if ($_SESSION['notify'] == "on")
 	{?>
-		<a href="app/notif_change.php"><input type="submit" value="Turn off"></a>
+		<a href=<?php echo $app_append."notif_change.php"?>><input type="submit" value="Turn off"></a>
 	<?php
 	}
 	else if ($_SESSION['notify'] == "off")
 	{?>
-		<a href="app/notif_change.php"><input type="submit" value="Turn on"></a>
+		<a href=<?php echo $app_append."notif_change.php"?>><input type="submit" value="Turn on"></a>
 	<?php
 	}
 ?><br><br>
