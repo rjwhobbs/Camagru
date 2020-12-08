@@ -23,13 +23,13 @@ require ($path.'/views/header.php');
 		<br>
 		<div id="stickers" style="display: inline" class="image-checkbox">
 			<input type="checkbox" name="sticker-menu2" id="sticker1" value="sticker1.png">
-				<label for="sticker1"><img  src="./images/sticker1.png" ></label>
+				<label for="sticker1"><img  src="../images/sticker1.png" ></label>
 			<input type="checkbox" name="sticker-menu2" id="sticker2" value="sticker2.png">
-				<label for="sticker2"><img  src="./images/sticker2.png" ></label>
+				<label for="sticker2"><img  src="../images/sticker2.png" ></label>
 			<input type="checkbox" name="sticker-menu2" id="sticker3" value="sticker3.png">
-				<label for="sticker3"><img  src="./images/sticker3.png"></label>
+				<label for="sticker3"><img  src="../images/sticker3.png"></label>
 			<input type="checkbox" name="sticker-menu2" id="sticker4" value="sticker4.png">
-				<label for="sticker4"><img src="./images/sticker4.png" ></label>
+				<label for="sticker4"><img src="../images/sticker4.png" ></label>
 			<input type="checkbox" name="sticker-menu2" id="stickernone" value="nosticker">
 				<label for="stickernone">No Sticker</label>
 		</div>
@@ -57,8 +57,8 @@ require ($path.'/views/header.php');
 			}
 			while ($i < $len)
 			{?>
-				<img src=<?php echo $thumbnails[$i]['path']?>>
-				<form action="app/delete_img.php" method="POST">
+				<img src=<?php echo '../'.$thumbnails[$i]['path']?>>
+				<form action="delete_img.php" method="POST">
 					<input type="hidden" name="path" value=<?php echo $thumbnails[$i]['path'];?>>
 					<input type="hidden" name="id" value=<?php echo $id;?>>
 					<input type="submit" name="Delete" value="Delete">
@@ -68,7 +68,7 @@ require ($path.'/views/header.php');
 			}
 		?>
 	</div>
-	<script src="javascript/main.js"></script>
+	<script src=<?php echo $root_ws."/javascript/main.js"?>></script>
 <?php
 require ($path.'/footer.php');
 ?>

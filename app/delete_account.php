@@ -50,7 +50,7 @@ if (!empty($_POST['check-confirm']) && !empty($_POST['confirm-passwd']) && !empt
 				$stmt->execute([$user_id]);
 				unset($stmt);
 
-				header('location: ../signout.php');
+				header('location: signout.php');
 				exit();
 			}
 			else

@@ -20,7 +20,7 @@ require ($path.'/includes/redirect_helper.php');
 		unset($_SESSION['message']);
 	}
 ?><br>
-<form action="profile.php" method="post"> 
+<form action=<?php echo $root_ws."/app/profile.php" ?> method="post"> 
 	<span>Your username: <?= $_SESSION['username'].' ' ?></span><br>
 		<input type="text" placeholder="update username" name="new_username">
 			<input type="submit" name="update_username" value="Update"><br>
@@ -37,16 +37,16 @@ require ($path.'/includes/redirect_helper.php');
 <?php
 	if ($_SESSION['notify'] == "on")
 	{?>
-		<a href=<?php echo $app_append."notif_change.php"?>><input type="submit" value="Turn off"></a>
+		<a href=<?php echo $root_ws."/notif_change.php"?>><input type="submit" value="Turn off"></a>
 	<?php
 	}
 	else if ($_SESSION['notify'] == "off")
 	{?>
-		<a href=<?php echo $app_append."notif_change.php"?>><input type="submit" value="Turn on"></a>
+		<a href=<?php echo $root_ws."/notif_change.php"?>><input type="submit" value="Turn on"></a>
 	<?php
 	}
 ?><br><br>
-<form id="delete-account" action="app/delete_account.php" method="post">
+<form id="delete-account" action="delete_account.php" method="post">
 	<span>Delete your account.<br> 
 			Enter the required feilds and click 'Delete account'. <br>
 			WARNING! This action cannot be undone!</span><br>

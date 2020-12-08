@@ -60,7 +60,7 @@ photoButton.addEventListener('click', function(e)
 		if (this.readyState == 4 && this.status == 200) 
 		{
 			path = this.responseText;
-			img.setAttribute('src', path);
+			img.setAttribute('src', '../' + path);
 			selected = '';
 		}
 	};
@@ -277,7 +277,7 @@ function deleteFromFile()
 			path = '';
 		}
 	};
-  	xhttp.open("POST", "app/delete_pic.php", true);
+  	xhttp.open("POST", "delete_pic.php", true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("deletepath=" + path);
 }

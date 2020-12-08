@@ -1,7 +1,8 @@
 <?php
 session_start();
-require (getcwd().'/valid_session_check.php');
-require (getcwd().'/connection.php');
+require ('globals.php');
+require ($path.'/valid_session_check.php');
+require ($path.'/connection.php');
 if (!empty($_POST['path']))
 {
 	$file = $_POST['path'];

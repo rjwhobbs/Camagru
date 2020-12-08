@@ -20,5 +20,5 @@ if (isset($user_id) && isset($img_path))
 	else 
         echo "Sorry can't delete image";
 }
-header("location: ../editor.php");
+header("location: editor.php");
 ?>

@@ -21,19 +21,19 @@ require ($path.'/includes/redirect_helper.php');
 		}
 		if (isset($_SESSION['user_id'])) 
 		{?>
-			<a href=<?php echo $app_append."signout.php"?>><input type="submit" value="Sign Out"></a>
-			<a href=<?php echo $app_append."profile.php"?>><input type="submit" value="Profile"></a> 
-			<a href="editor.php"><input type="submit" value="Camera Editor"></a> 
+			<a href=<?php echo $root_ws."/app/signout.php"?>><input type="submit" value="Sign Out"></a>
+			<a href=<?php echo $root_ws."/app/profile.php"?>><input type="submit" value="Profile"></a> 
+			<a href=<?php echo $root_ws."/app/editor.php"?>><input type="submit" value="Camera Editor"></a> 
 		<?php 
 		} 
 		else 
 		{?>
-			<a href="signin.php"><input type="submit" value="Sign In"></a>
-			<a href="form.php"><input type="submit" value="Sign Up"></a>
+			<a href=<?php echo $root_ws."/signin.php"?>><input type="submit" value="Sign In"></a>
+			<a href=<?php echo $root_ws."/form.php"?>><input type="submit" value="Sign Up"></a>
 		<?php 
 		}
 	?>
-	<a href=<?php echo $redirect?>><input type="submit" value="Feed"></a>
+	<a href=<?php echo $root_ws."/index.php"?>><input type="submit" value="Feed"></a>
 	<?php
 		if (isset($_SESSION['user_id']))
 		{?>

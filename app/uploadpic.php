@@ -7,7 +7,7 @@ include ($path.'/includes/helpers.php');
 if (isset($_POST['img']) && !empty($_POST['sticker']))
 {
 	$img = $_POST['img'];
-	$user_id = $_SESSION['user_id']; // why is this here
+	$user_id = $_SESSION['user_id'];
 	$sticker_choice = $_POST['sticker'];
 	$bytes = random_bytes(4);	
 	$rand = bin2hex($bytes);
@@ -38,8 +38,8 @@ if (isset($_POST['img']) && !empty($_POST['sticker']))
 	{
 		while ($i < $len && $i < 4)
 		{
-			$sticker = imagecreatefrompng("images/".$clean_arr[$i]);
-			list($width, $height) = getimagesize("images/".$clean_arr[$i]);
+			$sticker = imagecreatefrompng("../images/".$clean_arr[$i]);
+			list($width, $height) = getimagesize("../images/".$clean_arr[$i]);
 			if ($i == 0)
 			{
 				imagecopy($upload, $sticker, 0, 0, 0, 0, $width, $height);
@@ -68,7 +68,7 @@ if (isset($_POST['img']) && !empty($_POST['sticker']))
 		$file = "images/unedited".$rand.uniqid().".png";
 	else
 		$file = "images/".$rand.uniqid().".png";
-	$success = imagepng($upload, $file);
+	$success = imagepng($upload, '../'.$file);
 	
 	imagedestroy($upload);
 
