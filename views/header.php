@@ -1,3 +1,7 @@
+<?php
+require ('./globals.php'); 
+require ($path.'/includes/redirect_helper.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +14,15 @@
 <body>
 	<h1>This is Camagru</h1>
 	<?php
+		$redirect = "../index.php";
+		if ($_SERVER['REQUEST_URI'] == '/camagru/index.php')
+		{
+			$redirect = 'index.php';
+		}
 		if (isset($_SESSION['user_id'])) 
 		{?>
-			<a href="signout.php"><input type="submit" value="Sign Out"></a>
-			<a href="profile.php"><input type="submit" value="Profile"></a> 
+			<a href=<?php echo $app_append."signout.php"?>><input type="submit" value="Sign Out"></a>
+			<a href=<?php echo $app_append."profile.php"?>><input type="submit" value="Profile"></a> 
 			<a href="editor.php"><input type="submit" value="Camera Editor"></a> 
 		<?php 
 		} 
@@ -24,7 +33,7 @@
 		<?php 
 		}
 	?>
-	<a href="../index.php"><input type="submit" value="Feed"></a>
+	<a href=<?php echo $redirect?>><input type="submit" value="Feed"></a>
 	<?php
 		if (isset($_SESSION['user_id']))
 		{?>
