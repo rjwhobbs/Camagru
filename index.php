@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Camagru</title>
 	<link rel="stylesheet" href="css/style.css">
-</head>
+</head> -->
 <?php
 session_start();
 require ('globals.php');

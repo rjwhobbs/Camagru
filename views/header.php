@@ -9,7 +9,7 @@ require ($path.'/includes/redirect_helper.php');
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Camagru</title>
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href=<?php echo $root_ws."/css/style.css"?>>
 </head>
 <body>
 	<h1>This is Camagru</h1>
