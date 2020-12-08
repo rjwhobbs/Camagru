@@ -17,7 +17,7 @@ require ($path.'/views/header.php');
 				}
 		?>
 	</div> 
-	<form action="forgotpasswd.php" method="post">
+	<form action=<?php echo $root_ws."/app/forgotpasswd.php"?> method="post">
 		<input type="email" name="email" require><br>
 		<input type="submit" name="reset-passwd" value="Send email">
 	</form>
