@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Camagru</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
 <?php
 session_start();
 require ('globals.php');
@@ -42,7 +51,7 @@ require ($path.'/views/header.php');
 			}
 			?>
 			<p>Upload by <?php echo get_image_author_name($images[$i]['user_id']) ?></p>
-			<form action="comment.php" method="post">
+			<form action="app/comment.php" method="post">
 				<input type="hidden" name="image_src" value=<?php echo $images[$i]['path'] ?>>
 				<input type="hidden" name="image_id" value=<?php echo $images[$i]['id'] ?>>
 				<input type="submit" name="add_comment" value="View/Add Comments">
