@@ -19,7 +19,7 @@ require ($path.'/views/header.php');
 				unset($_SESSION['message']);
 			}
 ?></div>
-<form  action="form.php" method="POST" autocomplete="off" enctype="multipart/form-data">
+<form  action=<?php echo $root_ws."/app/form.php" ?> method="POST" autocomplete="off" enctype="multipart/form-data">
 	<span>Username:</span><input type="text" placeholder="username" name="username" required/><br />
 	<span>Email:</span><input type="email" placeholder="email address" name="email" required/><br />
 	<span>Password:</span><input type="password" placeholder="password" name="passwd" required/><br />

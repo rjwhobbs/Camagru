@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-signup']))
 	{
 		if (image_check($_FILES['profile-pic']['type'], $_FILES['profile-pic']['tmp_name']) === FALSE) 
 			$errors['image'] = 'Please only upload a valid image';	
-		else if (copy($_FILES['profile-pic']['tmp_name'], $profile_pic_path) === FALSE)
+		else if (copy($_FILES['profile-pic']['tmp_name'], '../'.$profile_pic_path) === FALSE)
 			$errors['image'] = 'Image upload failed';
 	}
 	else
