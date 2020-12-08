@@ -9,7 +9,7 @@ if (!empty($_FILES) && !empty($_POST['sticker']))
 	$sticker_choice = $_POST['sticker'];
 	$bytes = random_bytes(4);	
 	$rand = bin2hex($bytes);
-	$oripic_path = "images/".$rand.uniqid().".png";
+	$oripic_path = "../images/".$rand.uniqid().".png";
 
 	if (image_check($_FILES['file']['type'], 
 					$_FILES['file']['tmp_name']) === FALSE)
@@ -58,8 +58,8 @@ if (!empty($_FILES) && !empty($_POST['sticker']))
 	{
 		while ($i < $len && $i < 4)
 		{
-			$sticker = imagecreatefrompng("images/".$clean_arr[$i]);
-			list($width, $height) = getimagesize("images/".$clean_arr[$i]);
+			$sticker = imagecreatefrompng("../images/".$clean_arr[$i]);
+			list($width, $height) = getimagesize("../images/".$clean_arr[$i]);
 			if ($i == 0)
 			{
 				imagecopy($upload, $sticker, 0, 0, 0, 0, $width, $height);
@@ -88,7 +88,7 @@ if (!empty($_FILES) && !empty($_POST['sticker']))
 		$pic_path = "images/unedited".$rand.uniqid().".png";
 	else
 		$pic_path = "images/".$rand.uniqid().".png";
-	$success = imagepng($upload, $pic_path);
+	$success = imagepng($upload, '../'.$pic_path);
 	echo trim($pic_path);
 }
 else

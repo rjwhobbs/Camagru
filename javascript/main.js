@@ -304,7 +304,7 @@ imageUpload.addEventListener('change', function()
 			{
 				path = this.responseText;
 				photos.appendChild(img);
-				img.setAttribute('src', path);
+				img.setAttribute('src', '../' + path);
 				selected = '';	
 				imageUpload.value = "";
 			}
