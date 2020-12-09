@@ -37,12 +37,12 @@ require ($path.'/includes/redirect_helper.php');
 <?php
 	if ($_SESSION['notify'] == "on")
 	{?>
-		<a href=<?php echo $root_ws."/notif_change.php"?>><input type="submit" value="Turn off"></a>
+		<a href=<?php echo $root_ws."/app/notif_change.php"?>><input type="submit" value="Turn off"></a>
 	<?php
 	}
 	else if ($_SESSION['notify'] == "off")
 	{?>
-		<a href=<?php echo $root_ws."/notif_change.php"?>><input type="submit" value="Turn on"></a>
+		<a href=<?php echo $root_ws."/app/notif_change.php"?>><input type="submit" value="Turn on"></a>
 	<?php
 	}
 ?><br><br>

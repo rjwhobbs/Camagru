@@ -1,7 +1,7 @@
 <?php
 session_start();
 require ('./globals.php');
-require ($path.'/connection.php');
+require ($path.'/config/connection.php');
 include ($path.'/app/query_functions.php');
 include ($path.'/includes/mail_notif_function.php');
 if (isset($_POST['likes']) && isset($_POST['image_path']) && isset($_POST['image_id']) && isset($_SESSION['user_id']))

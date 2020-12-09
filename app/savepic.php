@@ -2,7 +2,7 @@
 session_start();
 require ('globals.php');
 require ($path.'/valid_session_check.php');
-require ($path.'/connection.php');
+require ($path.'/config/connection.php');
 if (!empty($_POST['path']))
 {
 	$file = $_POST['path'];

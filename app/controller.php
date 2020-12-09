@@ -1,6 +1,6 @@
 <?php
 require ('./globals.php');
-require ($path.'/connection.php');
+require ($path.'/config/connection.php');
 include ($path.'/includes/mail_verification_code.php');
 include ($path.'/includes/helpers.php');
 include ($path.'/app/query_functions.php');

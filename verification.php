@@ -1,6 +1,7 @@
 <?php
 session_start();
-require (getcwd().'/connection.php'); 
+require ('globals.php');
+require ($path.'/config/connection.php'); 
 if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['vcode']))
 {
 	try
