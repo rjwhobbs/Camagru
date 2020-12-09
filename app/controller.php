@@ -155,7 +155,7 @@ else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-signin']))
 			$_SESSION['notify'] = set_notification($info['notifications']);
 			$_SESSION['user_email'] = $info['email'];
 			unset($info);
-			header("location: index.php");
+			header("location: ../index.php");
 			exit(); 
 		}
 		else

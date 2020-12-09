@@ -11,7 +11,7 @@ function mail_verification_code($email, $code, $mode, $username)
 		$body ='<h3>Welcome to Camagru '.$username.'</h3>';
 		$body .= '<p>Please confirm your account by clicking on the link below 
 					or copying it into your browser address bar.</p>';
-		$body .= 'http://localhost:8080/camagru/verification.php?vcode='.$code;
+		$body .= 'http://localhost:8080/camagru/app/verification.php?vcode='.$code;
 	}
 	else if ($mode == "PASSWD_VERIFY")
 	{
@@ -19,7 +19,7 @@ function mail_verification_code($email, $code, $mode, $username)
 		$body .= '<p>You are receiving this email because you
 					forgot your password, please click on the link below 
 					or copy and paste it into your browser address bar.</p><br>';
-		$body .= "http://localhost:8080/camagru/reset.php?vcode=".$code;
+		$body .= "http://localhost:8080/camagru/app/reset.php?vcode=".$code;
 	}
 	if (mail($email, 'Email verification', $body, $headers) === FALSE)
 		return FALSE;

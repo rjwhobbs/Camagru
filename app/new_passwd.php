@@ -1,6 +1,7 @@
 <?php
 session_start();
-require (getcwd().'/app/controller.php');
+require ('./globals.php');
+require ($path.'/app/controller.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

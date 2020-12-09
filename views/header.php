@@ -28,7 +28,7 @@ require ($path.'/includes/redirect_helper.php');
 		} 
 		else 
 		{?>
-			<a href=<?php echo $root_ws."/signin.php"?>><input type="submit" value="Sign In"></a>
+			<a href=<?php echo $root_ws."/app/signin.php"?>><input type="submit" value="Sign In"></a>
 			<a href=<?php echo $root_ws."/app/form.php"?>><input type="submit" value="Sign Up"></a>
 		<?php 
 		}
