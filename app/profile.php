@@ -56,5 +56,5 @@ require ($path.'/views/header.php');
 </form>
 <button type="submit" form="delete-account">Delete account</button>
 <?php
-require ($path.'/footer.php');
+require ($path.'/views/footer.php');
 ?>

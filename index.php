@@ -54,5 +54,5 @@ require ($path.'/views/header.php');
 ?>
 <script src="javascript/helpers.js"></script>
 <?php
-require (getcwd().'/footer.php');
+require ($path.'/views/footer.php');
 ?>

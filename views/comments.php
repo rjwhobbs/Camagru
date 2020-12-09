@@ -27,5 +27,5 @@ if (count($errors) > 0)
 	?>
 </div>
 <?php
-require ($path.'/footer.php');
+require ($path.'/views/footer.php');
 ?>

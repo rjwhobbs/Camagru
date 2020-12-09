@@ -29,5 +29,5 @@ require ($path.'/views/header.php');
 	<input type="submit" name="resend-link" value="Resend link">
 </form>
 <?php
-require ($path.'/footer.php')
+require ($path.'/views/footer.php')
 ?>

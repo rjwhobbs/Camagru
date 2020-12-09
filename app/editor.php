@@ -70,5 +70,5 @@ require ($path.'/views/header.php');
 	</div>
 	<script src=<?php echo $root_ws."/javascript/main.js"?>></script>
 <?php
-require ($path.'/footer.php');
+require ($path.'/views/footer.php');
 ?>

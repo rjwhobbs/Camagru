@@ -1,2 +1,2 @@
 RewriteEngine on
-ErrorDocument 404 http://localhost:8080/camagru/error.php
+ErrorDocument 404 http://localhost:8080/camagru/views/error.php

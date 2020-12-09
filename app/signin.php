@@ -25,5 +25,5 @@ require ($path.'/views/header.php');
 	<span>Don't have an account?</span><br>
 	<a href="form.php"><input type="submit" value="Sign Up"></a>
 <?php
-require ($path.'/footer.php');
+require ($path.'/views/footer.php');
 ?>
