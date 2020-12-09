@@ -1,7 +1,7 @@
 <?php
 session_start();
 require ('../globals.php');
-require ($path.'/valid_session_check.php');
+require ($path.'/app/valid_session_check.php');
 require ($path.'/config/connection.php');
 if (!empty($_POST['check-confirm']) && !empty($_POST['confirm-passwd']) && !empty($_POST['delete']))
 {

@@ -2,7 +2,7 @@
 session_start();
 require ('../globals.php');
 require ($path.'/config/connection.php');
-require ($path.'/valid_session_check.php');
+require ($path.'/app/valid_session_check.php');
 $user_id = $_POST['id'];
 $img_path = $_POST['path'];
 if (isset($user_id) && isset($img_path)) 

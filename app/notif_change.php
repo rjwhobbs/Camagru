@@ -2,7 +2,7 @@
 session_start();
 require ('./globals.php');
 require ($path.'/app/controller.php');
-require ($path.'/valid_session_check.php'); 
+require ($path.'/app/valid_session_check.php'); 
 
 if ($_SESSION['notify'] == 'on')
 {

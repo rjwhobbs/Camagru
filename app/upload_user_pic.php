@@ -1,7 +1,7 @@
 <?php
 session_start();
 require ('globals.php');
-require ($path.'/valid_session_check.php');
+require ($path.'/app/valid_session_check.php');
 require ($path.'/config/connection.php');
 include ($path.'/includes/helpers.php');
 if (!empty($_FILES) && !empty($_POST['sticker']))

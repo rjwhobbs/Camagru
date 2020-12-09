@@ -43,7 +43,7 @@ require ($path.'/includes/redirect_helper.php');
 				if ($profile_pic !== FALSE)
 				{?>
 					<div class="profile-pic-div">
-						<img src=<?php echo $profile_pic ?> alt="">
+						<img src=<?php echo $root_ws.'/'.$profile_pic ?> alt="">
 					</div>
 				<?php
 				}

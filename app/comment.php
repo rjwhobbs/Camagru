@@ -1,7 +1,7 @@
 <?php
 session_start();
 require ('./globals.php');
-require ($path.'/valid_session_check.php'); 
+require ($path.'/app/valid_session_check.php'); 
 require ($path.'/app/controller.php');
 require ($path.'/views/header.php');
 if (!empty($_POST['image_src']) && !empty($_POST['image_id']))
