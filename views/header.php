@@ -1,6 +1,5 @@
 <?php
 require ('./globals.php'); 
-require ($path.'/includes/redirect_helper.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -4,7 +4,6 @@ require ('globals.php');
 require ($path.'/app/valid_session_check.php');
 require ($path.'/app/controller.php');
 require ($path.'/views/header.php');
-require ($path.'/includes/redirect_helper.php');
 ?>
 <h1>Profile settings for <?= $_SESSION['username']?></h1>
 <?php
