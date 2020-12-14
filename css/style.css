@@ -5,7 +5,7 @@
 
 body
 {
-  background-color: lightgray;
+  background-color: #f0d5aa;
   font-family: Tahoma;
   margin: 0px 0px;
   color: #1f1a19;
@@ -83,11 +83,6 @@ textarea
 		width: 80%;
 		height: 80%;
 	}	
-	.image-checkbox img
-	{
-		width: 10%;
-		height: 10%;
-	}
 	textarea
 	{
 		width: 10em;

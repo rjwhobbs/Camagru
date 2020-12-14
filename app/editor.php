@@ -5,23 +5,10 @@ require ($path.'/app/valid_session_check.php');
 require ($path.'/app/query_functions.php');
 require ($path.'/views/header.php');
 ?>
-	<h1>Camera Editor</h1>
-	<h2>Please select a sticker inorder to take a picture.</h2>
+	<!-- <h1>Camera Editor</h1> -->
+	<h2 class="text-cen">Please select a sticker inorder to take a picture.</h2>
 	<div>
-		<video id="video">Stream not available...</video><br>
-		<button style="display: none" id="photo-button" class="btn btn-dark">
-			Take Photo
-		</button>
-		<label id="imagelable" style="display: none"> or upload a pic</label>
-		<input id="uploadImage" style="display: none" type="file" name="upload-user" accept="image/*"><br> 
-		<button id="save-button" class="btn btn-dark" style="display: none">
-			Save Photo
-		</button>
-		<button id="clear-button" style="display: none">
-			Try again
-		</button>
-		<br>
-		<div id="stickers" style="display: inline" class="image-checkbox">
+		<div id="stickers" class="image-checkbox flex-con-cen">
 			<input type="checkbox" name="sticker-menu2" id="sticker1" value="sticker1.png">
 				<label for="sticker1"><img  src="../images/sticker1.png" ></label>
 			<input type="checkbox" name="sticker-menu2" id="sticker2" value="sticker2.png">
@@ -33,6 +20,23 @@ require ($path.'/views/header.php');
 			<input type="checkbox" name="sticker-menu2" id="stickernone" value="nosticker">
 				<label for="stickernone">No Sticker</label>
 		</div>
+		<div class="flex-con-cen">
+			<video id="video">Stream not available...</video>
+		</div>
+		<div class="flex-con-cen">
+			<button style="display: none" id="photo-button" class="btn btn-dark">
+				Take Photo
+			</button>
+			<label id="imagelable" style="display: none"> or upload a pic</label>
+			<input id="uploadImage" style="display: none" type="file" name="upload-user" accept="image/*"><br> 
+			<button id="save-button" class="btn btn-dark" style="display: none">
+				Save Photo
+			</button>
+			<button id="clear-button" style="display: none">
+				Try again
+			</button>
+		</div>
+		<br>
 		<canvas id="canvas"></canvas>
 	</div>
 	<div>

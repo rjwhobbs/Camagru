@@ -4,18 +4,21 @@
   flex-wrap: wrap;
 }
 
+.flex-con-cen
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+}
+
 .flex-con-button
 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   justify-content: center;
-}
-
-.test
-{
-  display: flex;
-  justify-self: end;
 }
 
 .flex-con-button > * 
@@ -31,6 +34,11 @@
 .flex-item-01
 {
   flex: 0.1
+}
+
+.text-cen
+{
+  text-align: center;
 }
 
 /* PADDING */
@@ -55,6 +63,11 @@
   padding-top: 7px;
 }
 
+.pdt-20
+{
+  padding-top: 20px;
+}
+
 /* MARGIN */
 
 .mt-15
@@ -67,5 +80,10 @@
 .font-60
 {
   font-size: 60px;
+}
+
+@media (max-width:550px)
+{
+
 }
 

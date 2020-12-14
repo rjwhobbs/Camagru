@@ -204,7 +204,7 @@ stickerMenu2[4].addEventListener('change', function(e) {
 })
 
 clearButton.addEventListener('click', function(e) {
-	stickers.style.display = 'inline';
+	stickers.style.display = 'flex';
 	photos.innerHTML = '';
 	photoButton.style.display = 'none';
 	imageUpload.style.display = 'none';
