@@ -1,1 +1,71 @@
-/* #d99354 */
+.flex-con
+{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-con-button
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  justify-content: center;
+}
+
+.test
+{
+  display: flex;
+  justify-self: end;
+}
+
+.flex-con-button > * 
+{
+  margin-right: 5px;
+}
+
+.flex-item-1 
+{
+  flex: 1;
+}
+
+.flex-item-01
+{
+  flex: 0.1
+}
+
+/* PADDING */
+
+.pd-10
+{
+  padding: 10px;
+}
+
+.pd-7
+{
+  padding: 7px;
+}
+
+.pdb-0
+{
+  padding-bottom: 0px;
+}
+
+.pdt-7
+{
+  padding-top: 7px;
+}
+
+/* MARGIN */
+
+.mt-15
+{
+  margin-top: 15px;
+}
+
+/* FONT SIZE */
+
+.font-60
+{
+  font-size: 60px;
+}
+

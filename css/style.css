@@ -1,13 +1,47 @@
-.profile-pic-div img
-{
-	width: 80px;
-	height: 80px;
-}
+/* * {
+  margin: 0;
+  padding: 0;
+} */
 
 body
 {
   background-color: lightgray;
   font-family: Tahoma;
+  margin: 0px 0px;
+  color: #1f1a19;
+}
+
+h1 
+{
+  margin-top: 0px;
+}
+
+.dark-border
+{
+  border: 1px solid #1f1a19;
+  border-radius: 2px;
+}
+
+input
+{
+  color: #e2b378;
+  background-color: #1f1a19;
+  padding: 10px;
+  border: none;
+  border-radius: 2px;
+  font-size: 14px;
+}
+
+.profile-pic-div img
+{
+	width: 80px;
+  height: 80px;
+  flex: 1;
+}
+
+.main-header {
+  background-color: #e2b378;
+  padding: 10px;
 }
 
 #canvas
