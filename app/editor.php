@@ -23,27 +23,27 @@ require ($path.'/views/header.php');
 		<div class="flex-con-cen">
 			<video id="video">Stream not available...</video>
 		</div>
-		<div class="flex-con-cen">
-			<button style="display: none" id="photo-button" class="btn btn-dark">
+		<div class="flex-con-cen pdt-7">
+			<button style="display: none" id="photo-button" class="mr-10">
 				Take Photo
 			</button>
-			<label id="imagelable" style="display: none"> or upload a pic</label>
+			<label class="mr-10" id="imagelable" style="display: none"> or upload a pic</label>
 			<input id="uploadImage" style="display: none" type="file" name="upload-user" accept="image/*"><br> 
-			<button id="save-button" class="btn btn-dark" style="display: none">
+			<button id="save-button" class="mr-10" style="display: none">
 				Save Photo
 			</button>
 			<button id="clear-button" style="display: none">
 				Try again
 			</button>
 		</div>
-		<br>
 		<canvas id="canvas"></canvas>
 	</div>
-	<div>
+	<div class="flex-con-cen pdt-7">
 		<div id="photos">
 		</div>
 	</div>
-	<div class="thumbnails">
+	<div class="thumbnails flex-con-cen-col ">
+		<div class="thick-dark-border">
 		<?php
 			$id = $_SESSION['user_id'];
 
@@ -61,16 +61,17 @@ require ($path.'/views/header.php');
 			}
 			while ($i < $len)
 			{?>
-				<img src=<?php echo '../'.$thumbnails[$i]['path']?>>
+				<img class="mt-7" src=<?php echo '../'.$thumbnails[$i]['path']?>>
 				<form action="delete_img.php" method="POST">
 					<input type="hidden" name="path" value=<?php echo $thumbnails[$i]['path'];?>>
 					<input type="hidden" name="id" value=<?php echo $id;?>>
-					<input type="submit" name="Delete" value="Delete">
+					<input class="mt-7" type="submit" name="Delete" value="Delete">
 				</form>
 				<?php $i++; ?>
 			<?php	
 			}
 		?>
+		</div>
 	</div>
 	<script src=<?php echo $root_ws."/javascript/main.js"?>></script>
 <?php

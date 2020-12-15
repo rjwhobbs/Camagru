@@ -22,7 +22,24 @@ h1
   border-radius: 2px;
 }
 
+.thick-dark-border
+{
+  border: 5px solid #1f1a19;
+  border-radius: 5px;
+  padding: 7px;
+}
+
 input
+{
+  color: #e2b378;
+  background-color: #1f1a19;
+  padding: 10px;
+  border: none;
+  border-radius: 2px;
+  font-size: 14px;
+}
+
+button
 {
   color: #e2b378;
   background-color: #1f1a19;

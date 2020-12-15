@@ -13,6 +13,16 @@
   align-items: center;
 }
 
+.flex-con-cen-col
+{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+}
+
 .flex-con-button
 {
   display: flex;
@@ -68,11 +78,31 @@
   padding-top: 20px;
 }
 
+.pdr-10
+{
+  padding-right: 10px;
+}
+
 /* MARGIN */
+
+.mt-7
+{
+  margin-top: 7px;
+}
+
+.mt-10
+{
+  margin-top: 10px;
+}
 
 .mt-15
 {
   margin-top: 15px;
+}
+
+.mr-10
+{
+  margin-right: 10px;
 }
 
 /* FONT SIZE */
