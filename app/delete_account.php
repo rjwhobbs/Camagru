@@ -70,7 +70,7 @@ if (!empty($_POST['check-confirm']) && !empty($_POST['confirm-passwd']) && !empt
 else
 {
 	$_SESSION['message'] = "All feilds must be filled in.";
-	header('location: ../profile.php');
+	header('location: profile.php');
 	exit();
 }
 ?>

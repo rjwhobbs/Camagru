@@ -88,6 +88,16 @@ textarea
 	height: 60px;
 }
 
+.font-red
+{
+  color: rgb(121, 4, 4);
+}
+
+.bold
+{
+  font-weight: bold;
+}
+
 @media (max-width:530px)
 {
 	video

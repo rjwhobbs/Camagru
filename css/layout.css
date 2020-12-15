@@ -51,6 +51,11 @@
   text-align: center;
 }
 
+.dis-in
+{
+  display: inline-block;
+}
+
 /* PADDING */
 
 .pd-10
@@ -100,7 +105,12 @@
   margin-top: 15px;
 }
 
-.mr-10
+.mt-30
+{
+  margin-top: 30px;
+}
+
+.mr-0
 {
   margin-right: 10px;
 }
