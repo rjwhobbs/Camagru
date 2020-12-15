@@ -90,6 +90,11 @@
 
 /* MARGIN */
 
+.mr-0
+{
+  margin-right: 0px !important;
+}
+
 .mt-7
 {
   margin-top: 7px;
@@ -110,7 +115,7 @@
   margin-top: 30px;
 }
 
-.mr-0
+.mr-10
 {
   margin-right: 10px;
 }

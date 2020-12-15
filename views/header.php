@@ -41,9 +41,11 @@ require ('./globals.php');
 			if (isset($_SESSION['user_id'])) 
 			{?>
 				<a href=<?php echo $root_ws."/app/editor.php"?>><input type="submit" value="Camera Editor"></a> 
-				<a href=<?php echo $root_ws."/app/profile.php"?>><input type="submit" value="Profile"></a> 
-				<a href=<?php echo $root_ws."/app/signout.php"?>><input type="submit" value="Sign Out"></a>
-				<span class="pd-7 pdb-0 pdt-7 dark-border">Logged in as: <?php echo $_SESSION['username']?></span>
+				<a href=<?php echo $root_ws."/app/profile.php"?>><input type="submit" value="Profile"></a>
+				<span style="display: flex">
+					<span class="pd-7 pdb-0 pdt-7 dark-border mr-0 right-s">Logged in as: <?php echo $_SESSION['username']?></span>
+					<a href=<?php echo $root_ws."/app/signout.php"?>><input class="left-s" type="submit" value="Sign Out"></a>
+				</span>
 			<?php 
 			} 
 			else 

@@ -68,7 +68,9 @@ button
 
 .indexfeed
 {
-	border: 1px solid lightcyan;
+  border: 5px solid #3d2720;
+  border-radius: 5px;
+  padding: 2px;
 }
 
 textarea
@@ -98,6 +100,18 @@ textarea
   font-weight: bold;
 }
 
+.right-s
+{
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+.left-s
+{
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
 @media (max-width:530px)
 {
 	video
@@ -108,7 +122,7 @@ textarea
 	img
 	{
 		width: 80%;
-		height: 80%;
+		/* height: 80%; */
 	}	
 	textarea
 	{

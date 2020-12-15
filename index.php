@@ -4,7 +4,8 @@ require ('globals.php');
 require ($path.'/app/controller.php');
 require ($path.'/views/header.php');
 ?>
-<h2>Camagru feed</h2>
+<!-- <h2>Camagru feed</h2> -->
+<div class="flex-con-cen-col mt-30">
 <?php
 	if (count($errors) > 0)
 	{
@@ -22,7 +23,7 @@ require ($path.'/views/header.php');
 	$array_size = count($images);
 	while ($i < $array_size)
 	{?>
-		<div class="indexfeed">
+		<div class="indexfeed mt-15">
 			<img src=<?php echo $images[$i]['path']; ?>><br>
 			<?php 
 			if (isset($_SESSION['user_id']) && isset($_SESSION['username']))
@@ -52,6 +53,7 @@ require ($path.'/views/header.php');
 	<?php
 	}
 ?>
+</div>
 <script src="javascript/helpers.js"></script>
 <?php
 require ($path.'/views/footer.php');
