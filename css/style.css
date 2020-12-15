@@ -57,8 +57,9 @@ button
 }
 
 .main-header {
-  background-color: #e2b378;
+  /* background-color: #c49761; */
   padding: 10px;
+  background-image: linear-gradient(to top, #f0d5aa, #c49761 2%)
 }
 
 #canvas
@@ -93,6 +94,11 @@ textarea
 .font-red
 {
   color: rgb(121, 4, 4);
+}
+
+.font-choc
+{
+  color: #291a15;
 }
 
 .bold

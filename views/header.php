@@ -14,7 +14,9 @@ require ('./globals.php');
 <body>
 	<div class="main-header">
 	<div class="flex-con">
-		<h1 class="flex-item-1 mt-15 font-60">Camagru</h1>
+		<h1 class="flex-item-1 mt-15 font-60 font-choc">Camagru 
+			<span class="font-16"><i>...yummy pics</i></span>
+		</h1>
 		<?php
 			if (isset($_SESSION['user_id']))
 			{?>

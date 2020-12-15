@@ -122,6 +122,11 @@
 
 /* FONT SIZE */
 
+.font-16
+{
+  font-size: 16px;
+}
+
 .font-60
 {
   font-size: 60px;
