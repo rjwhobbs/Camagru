@@ -20,6 +20,11 @@ if (isset($_POST['likes']) && isset($_POST['image_path']) && isset($_POST['image
 		// $tsmt->execute([$image_id, $image_path]);
 		// $tres = $tsmt->fetchAll(PDO::FETCH_ASSOC);
 		// var_dump($tres);
+		$query =  "SELECT `images`.`likes`, `likes`.`user_id`, `likes`.`liked` FROM `likes` LEFT JOIN `images` ON `images`.`id` = `likes`.`image_id` WHERE (`images`.`id` = ? AND likes.user_id = ?)";
+		$stmt = $conn->prepare($query);
+		$stmt->execute([$image_id, $user_id]);
+		$res = $stmt->fetch(PDO::FETCH_ASSOC);
+		var_dump($res);
 
 		$query = "LOCK TABLES `images` WRITE, `likes` WRITE";
 		$conn->query($query);
