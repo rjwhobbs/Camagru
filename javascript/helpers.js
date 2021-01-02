@@ -8,8 +8,8 @@ function likeFunction(e)
             document.getElementById(e.id).innerHTML =
 			this.responseText + " Like+";
 		}
-    };
+  };
 	xhttp.open("POST", "app/likes_manager.php", true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("likes=" + '1' + "&image_path=" + e.value + "&image_id=" + e.id); 
+  xhttp.send("likes=" + '1' + "&image_path=" + e.value + "&image_id=" + e.id); 
 }

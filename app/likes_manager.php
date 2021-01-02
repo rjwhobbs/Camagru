@@ -15,7 +15,12 @@ if (isset($_POST['likes']) && isset($_POST['image_path']) && isset($_POST['image
 		// Lets try use this join some where
 		// SELECT * FROM `images` INNER JOIN `likes` ON `images`.`id` = `likes`.`image_id` WHERE (`images`.`user_id` = 2 AND `likes`.`user_id` = 2) 
 		// or
-		// SELECT `images`.`likes`, `likes`.`liked` FROM `images` INNER JOIN `likes` ON `images`.`id` = `likes`.`image_id` WHERE (`images`.`user_id` = 2 AND `likes`.`user_id` = 2)
+		$testq = "SELECT `images`.`likes`, `likes`.`liked` FROM `images` INNER JOIN `likes` ON `images`.`id` = `likes`.`image_id` WHERE (`images`.`id` = ? AND `likes`.`user_id` = ? AND `images`.`path` = ?)";
+		$tsmt = $conn->prepare($testq);
+		$tsmt->execute([$image_id, $user_id, $image_path]);
+		$tres = $tsmt->fetch(PDO::FETCH_ASSOC);
+		var_dump($tres);
+
 		$query = "LOCK TABLES `images` WRITE, `likes` WRITE";
 		$conn->query($query);
 
