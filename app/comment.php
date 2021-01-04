@@ -12,7 +12,7 @@ if (!empty($_POST['image_src']) && !empty($_POST['image_id']))
 else if (!isset($_SESSION['image_src']) || !isset($_SESSION['image_id']))
 {
 	$_SESSION['message'] = "We couldn't load the comments page right now, please try again later.";
-	header('location: index.php');
+	header('location: ../index.php');
 	exit();
 } 
 $comments_array = get_image_comments($_SESSION['image_id']);
