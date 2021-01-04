@@ -14,7 +14,7 @@ require ($path.'/app/controller.php');
 	<link rel="stylesheet" href=<?php echo $root_ws."/css/style.css"?>>
 </head>
 <body class="flex-con-cen-col mt-30">
-	<div>
+	<div class="font-red bold">
 		<?php
 			if (!empty($_SESSION['message']))
 			{	
