@@ -17,7 +17,7 @@ Esentially, a basic clone of instagram.
 - Insure that your [XAMP](https://www.apachefriends.org/download.html) or [MAMP](https://bitnami.com/stacks/infrastructure) server is successfully installed.
 - Clear out your htdocs directory and clone this repo inside the htdocs file of your server.
 - Add your DB credentials to `config/database.php`.
-- Start your server and use this URL to setup the web site `localhost:8080/camagru/config/database.php`. Be sure to use the port you predefined during your server installation.
+- Start your server and use this URL to setup the web site `localhost:8080/camagru/config/setup.php`. Be sure to use the port you predefined during your server installation.
 - Now go to the root of the site `localhost:8080/camagru`, you will find links to create an account and signin.
 - Ensure that your email host is correctly configured on your XAMP or MAMP server via the `php.ini` file.
 
